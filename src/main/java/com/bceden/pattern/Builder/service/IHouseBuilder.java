@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç11:37:49
+ * Createdate: ä¸Šåˆ11:37:49
  * Version: 1.0
  *
  */
@@ -13,37 +12,37 @@ package com.bceden.pattern.Builder.service;
 import com.bceden.pattern.Builder.model.House;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-8-27 ÉÏÎç11:37:49   
+ * @date 2014-8-27 ä¸Šåˆ11:37:49   
  */
 
 public interface IHouseBuilder {
-	/**
-     * ½¨ÔìÇ½±Ú
+    /**
+     * å»ºé€ å¢™å£
      */
     public void buildWall();
-    
+
     /**
-     * ½¨Ôì·¿ÃÅ
+     * å»ºé€ æˆ¿é—¨
      */
     public void buildDoor();
-    
+
     /**
-     * ½¨ÔìµØ°å
+     * å»ºé€ åœ°æ¿
      */
     public void buildFloor();
-    
+
     /**
-     * ½¨Ôì´°»§
+     * å»ºé€ çª—æˆ·
      * @return
      */
     public void buildWindows();
-    
+
     /**
-     * ·µ»Ø´´ÔìÍê³ÉµÄ¶ÔÏó
+     * è¿”å›åˆ›é€ å®Œæˆçš„å¯¹è±¡
      * @return
      */
     public House getHouse();

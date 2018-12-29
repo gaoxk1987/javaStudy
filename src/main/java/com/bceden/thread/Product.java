@@ -15,7 +15,7 @@ public class Product implements Runnable {
 		while (true) {
 			synchronized (container) {
 				if (container.size() > MultiThread.MAX) {
-					// Èç¹ûÈİÆ÷³¬¹ıÁË×î´óÖµ£¬¾Í²»ÒªÔÚÉú²úÁË£¬µÈ´ıÏû·Ñ
+					// å¦‚æœå®¹å™¨è¶…è¿‡äº†æœ€å¤§å€¼ï¼Œå°±ä¸è¦åœ¨ç”Ÿäº§äº†ï¼Œç­‰å¾…æ¶ˆè´¹
 					try {
 						container.wait();
 					} catch (InterruptedException e) {
@@ -29,7 +29,7 @@ public class Product implements Runnable {
 				}
 				container.add(new Object());
 				container.notify();
-				System.out.println("ÎÒÉú²úÁË" + (++count) + "¸ö");
+				System.out.println("æˆ‘ç”Ÿäº§äº†" + (++count) + "ä¸ª");
 			}
 		}
 	}

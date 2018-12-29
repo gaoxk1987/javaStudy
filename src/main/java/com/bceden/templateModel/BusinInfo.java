@@ -1,137 +1,137 @@
 /**
- * 
+ *
  */
 package com.bceden.templateModel;
 
 import java.util.Date;
 
 /**
- * ÉÌ»úĞÅÏ¢
+ * å•†æœºä¿¡æ¯
  * @author Gxk
  *
  */
 public class BusinInfo{
-	
-	private static final long serialVersionUID = 1L;
-	private String bcid;  //¹©Ó¦ĞÅÏ¢id,¶à¸öÓÃ'-'·Ö¸ô
-	private long userid; //ÉÌ¼Òid
-	private int oper; //²Ù×÷ÀàĞÍ£¬0ĞÂ·¢´ıÉó£¬1ĞÂ·¢ÃâÉó£¬2ĞŞ¸Ä´ıÉó£¬3ĞŞ¸ÄÃâÉó£¬4Î´¹ıÆÚÖØ·¢£¬5¹ıÆÚÖØ·¢£¬6×ª¹ıÆÚ£¬7É¾³ı£¬8ÉóºËÍ¨¹ı£¬9¾ÜÉó
-	private Date createTime; //·¢²¼Ê±¼ä
-	private String validate; //ÓĞĞ§Ê±¼ä
-	private String validates;//¶à¸öÓĞĞ§ÆÚ";"·Ö¸ô
-	private boolean hasImage;   //ÊÇ·ñÓĞÍ¼Æ¬
-	private int imageAmount;      //Í¼Æ¬ÊıÁ¿
-	private int noRequiredParam;  //·Ç±ØÌî²ÎÊı°Ù·Ö±È£¨0:@=0%;1£º0<@<30%£»2£º30%¡Ü@£¼60%£»3£º60%¡Ü@£¼80%;4:80%¡Ü@£¼100%;5:100%;6:¸ÃÆ·ÀàÏÂÎŞ·Ç±ØÌî²ÎÊı£©
-	private int firstImageType; //µÚÒ»ÕÅÍ¼Æ¬¿í¸ß×îĞ¡³ß´ç £¨0:@=0;1£º180<=@<500£»2£º@>=500£»£©
-	private int hasOtherTitleDetail;   //±êÌâÊÇ·ñº¬ÓĞÆäËüÎÄ×ÖÄÚÈİ £¨1£º²»°üÀ¨²úÆ·¹Ø¼ü×Ö;2£º°üº¬²úÆ·¹Ø¼ü×Ö;3:¡° °üº¬ÓĞ²»²ğ·ÖµÄ¹Ø¼ü×Ö + ³ı¹Ø¼ü×ÖÒÔÍâµÄÎÄ×Ö£¨Æ·ÀàÆ·ÅÆĞÍºÅËãÆäËüÎÄ×Ö£©£©
-	private int detailAmount;			 //ÏêÏ¸ÄÚÈİ×ÖÊı £¨0:@=0%;1£º0<@<15¸ö×Ö £»2£º15<=@<100×Ö£»3£º100<=@<300×Ö£»4£º@>=300×Ö£©
-	private int detailImageAmount;   	 //ÏêÏ¸ÄÚÈİÖĞÍ¼Æ¬ÊıÁ¿
-	private boolean  hasNum;	 //ÊÇ·ñ´æÔÚ¹©»õ×ÜÁ¿
-	private boolean  hasMinOrderNum;	 //ÊÇ·ñ´æÔÚ×îĞ¡Æğ¶©Á¿
-	private int  userParamAmount;   	 //ÓÃ»§×Ô¶¨Òå²ÎÊı¸öÊı
-	private boolean priceType;//±¨¼Û·½Ê½  ÊÇ·ñÊÇÖ±½Ó±¨¼Û
 
-	public String getValidates() {
-		return validates;
-	}
-	public void setValidates(String validates) {
-		this.validates = validates;
-	}
-	public String getBcid() {
-		return bcid;
-	}
-	public void setBcid(String bcid) {
-		this.bcid = bcid;
-	}
-	public long getUserid() {
-		return userid;
-	}
-	public void setUserid(long userid) {
-		this.userid = userid;
-	}
-	public int getOper() {
-		return oper;
-	}
-	public void setOper(int oper) {
-		this.oper = oper;
-	}
-	public Date getCreateTime() {
-		return createTime;
-	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	public String getValidate() {
-		return validate;
-	}
-	public void setValidate(String validate) {
-		this.validate = validate;
-	}	
-	public boolean getHasImage() {
-		return hasImage;
-	}
-	public void setHasImage(boolean hasImage) {
-		this.hasImage = hasImage;
-	}
-	public int getImageAmount() {
-		return imageAmount;
-	}
-	public void setImageAmount(int imageAmount) {
-		this.imageAmount = imageAmount;
-	}
-	public int getNoRequiredParam() {
-		return noRequiredParam;
-	}
-	public void setNoRequiredParam(int noRequiredParam) {
-		this.noRequiredParam = noRequiredParam;
-	}
-	public int getHasOtherTitleDetail() {
-		return hasOtherTitleDetail;
-	}
-	public void setHasOtherTitleDetail(int hasOtherTitleDetail) {
-		this.hasOtherTitleDetail = hasOtherTitleDetail;
-	}
-	public int getDetailAmount() {
-		return detailAmount;
-	}
-	public void setDetailAmount(int detailAmount) {
-		this.detailAmount = detailAmount;
-	}
-	public int getDetailImageAmount() {
-		return detailImageAmount;
-	}
-	public void setDetailImageAmount(int detailImageAmount) {
-		this.detailImageAmount = detailImageAmount;
-	}
-	public boolean getHasNum() {
-		return hasNum;
-	}
-	public void setHasNum(boolean hasNum) {
-		this.hasNum = hasNum;
-	}
-	public int getUserParamAmount() {
-		return userParamAmount;
-	}
-	public void setUserParamAmount(int userParamAmount) {
-		this.userParamAmount = userParamAmount;
-	}
-	public boolean isPriceType() {
-		return priceType;
-	}
-	public void setPriceType(boolean priceType) {
-		this.priceType = priceType;
-	}
-	public int getFirstImageType() {
-		return firstImageType;
-	}
-	public void setFirstImageType(int firstImageType) {
-		this.firstImageType = firstImageType;
-	}
-	public boolean isHasMinOrderNum() {
-		return hasMinOrderNum;
-	}
-	public void setHasMinOrderNum(boolean hasMinOrderNum) {
-		this.hasMinOrderNum = hasMinOrderNum;
-	}
+    private static final long serialVersionUID = 1L;
+    private String bcid;  //ä¾›åº”ä¿¡æ¯id,å¤šä¸ªç”¨'-'åˆ†éš”
+    private long userid; //å•†å®¶id
+    private int oper; //æ“ä½œç±»å‹ï¼Œ0æ–°å‘å¾…å®¡ï¼Œ1æ–°å‘å…å®¡ï¼Œ2ä¿®æ”¹å¾…å®¡ï¼Œ3ä¿®æ”¹å…å®¡ï¼Œ4æœªè¿‡æœŸé‡å‘ï¼Œ5è¿‡æœŸé‡å‘ï¼Œ6è½¬è¿‡æœŸï¼Œ7åˆ é™¤ï¼Œ8å®¡æ ¸é€šè¿‡ï¼Œ9æ‹’å®¡
+    private Date createTime; //å‘å¸ƒæ—¶é—´
+    private String validate; //æœ‰æ•ˆæ—¶é—´
+    private String validates;//å¤šä¸ªæœ‰æ•ˆæœŸ";"åˆ†éš”
+    private boolean hasImage;   //æ˜¯å¦æœ‰å›¾ç‰‡
+    private int imageAmount;      //å›¾ç‰‡æ•°é‡
+    private int noRequiredParam;  //éå¿…å¡«å‚æ•°ç™¾åˆ†æ¯”ï¼ˆ0:@=0%;1ï¼š0<@<30%ï¼›2ï¼š30%â‰¤@ï¼œ60%ï¼›3ï¼š60%â‰¤@ï¼œ80%;4:80%â‰¤@ï¼œ100%;5:100%;6:è¯¥å“ç±»ä¸‹æ— éå¿…å¡«å‚æ•°ï¼‰
+    private int firstImageType; //ç¬¬ä¸€å¼ å›¾ç‰‡å®½é«˜æœ€å°å°ºå¯¸ ï¼ˆ0:@=0;1ï¼š180<=@<500ï¼›2ï¼š@>=500ï¼›ï¼‰
+    private int hasOtherTitleDetail;   //æ ‡é¢˜æ˜¯å¦å«æœ‰å…¶å®ƒæ–‡å­—å†…å®¹ ï¼ˆ1ï¼šä¸åŒ…æ‹¬äº§å“å…³é”®å­—;2ï¼šåŒ…å«äº§å“å…³é”®å­—;3:â€œ åŒ…å«æœ‰ä¸æ‹†åˆ†çš„å…³é”®å­— + é™¤å…³é”®å­—ä»¥å¤–çš„æ–‡å­—ï¼ˆå“ç±»å“ç‰Œå‹å·ç®—å…¶å®ƒæ–‡å­—ï¼‰ï¼‰
+    private int detailAmount;			 //è¯¦ç»†å†…å®¹å­—æ•° ï¼ˆ0:@=0%;1ï¼š0<@<15ä¸ªå­— ï¼›2ï¼š15<=@<100å­—ï¼›3ï¼š100<=@<300å­—ï¼›4ï¼š@>=300å­—ï¼‰
+    private int detailImageAmount;   	 //è¯¦ç»†å†…å®¹ä¸­å›¾ç‰‡æ•°é‡
+    private boolean  hasNum;	 //æ˜¯å¦å­˜åœ¨ä¾›è´§æ€»é‡
+    private boolean  hasMinOrderNum;	 //æ˜¯å¦å­˜åœ¨æœ€å°èµ·è®¢é‡
+    private int  userParamAmount;   	 //ç”¨æˆ·è‡ªå®šä¹‰å‚æ•°ä¸ªæ•°
+    private boolean priceType;//æŠ¥ä»·æ–¹å¼  æ˜¯å¦æ˜¯ç›´æ¥æŠ¥ä»·
+
+    public String getValidates() {
+        return validates;
+    }
+    public void setValidates(String validates) {
+        this.validates = validates;
+    }
+    public String getBcid() {
+        return bcid;
+    }
+    public void setBcid(String bcid) {
+        this.bcid = bcid;
+    }
+    public long getUserid() {
+        return userid;
+    }
+    public void setUserid(long userid) {
+        this.userid = userid;
+    }
+    public int getOper() {
+        return oper;
+    }
+    public void setOper(int oper) {
+        this.oper = oper;
+    }
+    public Date getCreateTime() {
+        return createTime;
+    }
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+    public String getValidate() {
+        return validate;
+    }
+    public void setValidate(String validate) {
+        this.validate = validate;
+    }
+    public boolean getHasImage() {
+        return hasImage;
+    }
+    public void setHasImage(boolean hasImage) {
+        this.hasImage = hasImage;
+    }
+    public int getImageAmount() {
+        return imageAmount;
+    }
+    public void setImageAmount(int imageAmount) {
+        this.imageAmount = imageAmount;
+    }
+    public int getNoRequiredParam() {
+        return noRequiredParam;
+    }
+    public void setNoRequiredParam(int noRequiredParam) {
+        this.noRequiredParam = noRequiredParam;
+    }
+    public int getHasOtherTitleDetail() {
+        return hasOtherTitleDetail;
+    }
+    public void setHasOtherTitleDetail(int hasOtherTitleDetail) {
+        this.hasOtherTitleDetail = hasOtherTitleDetail;
+    }
+    public int getDetailAmount() {
+        return detailAmount;
+    }
+    public void setDetailAmount(int detailAmount) {
+        this.detailAmount = detailAmount;
+    }
+    public int getDetailImageAmount() {
+        return detailImageAmount;
+    }
+    public void setDetailImageAmount(int detailImageAmount) {
+        this.detailImageAmount = detailImageAmount;
+    }
+    public boolean getHasNum() {
+        return hasNum;
+    }
+    public void setHasNum(boolean hasNum) {
+        this.hasNum = hasNum;
+    }
+    public int getUserParamAmount() {
+        return userParamAmount;
+    }
+    public void setUserParamAmount(int userParamAmount) {
+        this.userParamAmount = userParamAmount;
+    }
+    public boolean isPriceType() {
+        return priceType;
+    }
+    public void setPriceType(boolean priceType) {
+        this.priceType = priceType;
+    }
+    public int getFirstImageType() {
+        return firstImageType;
+    }
+    public void setFirstImageType(int firstImageType) {
+        this.firstImageType = firstImageType;
+    }
+    public boolean isHasMinOrderNum() {
+        return hasMinOrderNum;
+    }
+    public void setHasMinOrderNum(boolean hasMinOrderNum) {
+        this.hasMinOrderNum = hasMinOrderNum;
+    }
 
 }

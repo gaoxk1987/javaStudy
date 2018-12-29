@@ -5,26 +5,26 @@ import com.bceden.pattern.Builder.model.House;
 
 public class BritishStyleHouseBuilderImpl implements IHouseBuilder {
 
-    public House house = new BritishStyleHouse(); 
-    
+    public House house = new BritishStyleHouse();
+
     @Override
     public void buildDoor() {
-        house.setDoor("Ӣʽ�����");
+        house.setDoor("荎宒瑞跡藷");
     }
 
     @Override
     public void buildFloor() {
-        house.setFloor("Ӣʽ���ذ�");
+        house.setFloor("荎宒瑞跡華啣");
     }
 
     @Override
     public void buildWall() {
-        house.setWall("Ӣʽ���ذ�");
+        house.setWall("荎宒瑞跡華啣");
     }
 
     @Override
     public void buildWindows() {
-        house.setWindows("Ӣʽ��񴰻�");
+        house.setWindows("荎宒瑞跡敦誧");
     }
 
     @Override

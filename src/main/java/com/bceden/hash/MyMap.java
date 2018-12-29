@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç6:05:56
+ * Createdate: ä¸‹åˆ6:05:56
  * Version: 1.0
  *
  */
@@ -11,219 +11,219 @@
 package com.bceden.hash;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-4-15 ÏÂÎç6:05:56   
+ * @date 2014-4-15 ä¸‹åˆ6:05:56
  */
 
-public class MyMap< K, V> {   
-    private int size;// µ±Ç°ÈİÁ¿   
-    private static int INIT_CAPACITY = 16;// Ä¬ÈÏÈİÁ¿   
-    private Entry< K, V>[] container;// Êµ¼Ê´æ´¢Êı¾İµÄÊı×é¶ÔÏó   
-    private static float LOAD_FACTOR = 0.75f;// ×°ÔØÒò×Ó   
-    private int max;// ÄÜ´æµÄ×î´óµÄÊı=capacity*factor   
-  
-    // ×Ô¼ºÉèÖÃÈİÁ¿ºÍ×°ÔØÒò×ÓµÄ¹¹ÔìÆ÷   
-    public MyMap(int init_Capaticy, float load_factor) {   
-        if (init_Capaticy < 0)   
-            throw new IllegalArgumentException("Illegal initial capacity: "  
-                    + init_Capaticy);   
-        if (load_factor <= 0 || Float.isNaN(load_factor))   
-            throw new IllegalArgumentException("Illegal load factor: "  + load_factor);   
-        this.LOAD_FACTOR = load_factor;   
-        max = (int) (init_Capaticy * load_factor);   
-        container = new Entry[init_Capaticy];   
-    }   
-  
-    // Ê¹ÓÃÄ¬ÈÏ²ÎÊıµÄ¹¹ÔìÆ÷   
-    public MyMap() {   
-        this(INIT_CAPACITY, LOAD_FACTOR);   
-    }   
-  
-    /**  
-     * ´æ  
-     *   
-     * @param k  
-     * @param v  
-     * @return  
-     */  
-    public boolean put(K k, V v) {   
-        // 1.¼ÆËãKµÄhashÖµ   
-        // ÒòÎª×Ô¼ººÜÄÑĞ´³ö¶Ô²»Í¬µÄÀàĞÍ¶¼ÊÊÓÃµÄHashËã·¨£¬¹Êµ÷ÓÃJDK¸ø³öµÄhashCode()·½·¨À´¼ÆËãhashÖµ   
-        int hash = k.hashCode();   
-        //½«ËùÓĞĞÅÏ¢·â×°ÎªÒ»¸öEntry   
-        Entry< K,V> temp=new Entry(k,v,hash);   
-            if(setEntry(temp, container)){   
-                // ´óĞ¡¼ÓÒ»   
-                size++;   
-                return true;   
-            }   
-            return false;   
-    }   
-  
-  
-    /**  
-     * À©ÈİµÄ·½·¨  
-     *   
-     * @param newSize  
-     *            ĞÂµÄÈİÆ÷´óĞ¡  
-     */  
-    private void reSize(int newSize) {   
-        // 1.ÉùÃ÷ĞÂÊı×é   
-        Entry< K, V>[] newTable = new Entry[newSize];   
-        max = (int) (newSize * LOAD_FACTOR);   
-        // 2.¸´ÖÆÒÑÓĞÔªËØ,¼´±éÀúËùÓĞÔªËØ£¬Ã¿¸öÔªËØÔÙ´æÒ»±é   
-        for (int j = 0; j < container.length; j++) {   
-            Entry< K, V> entry = container[j];   
-            //ÒòÎªÃ¿¸öÊı×éÔªËØÆäÊµÎªÁ´±í£¬ËùÒÔ¡­¡­¡­¡­   
-            while (null != entry) {   
-                setEntry(entry, newTable);   
-                entry = entry.next;   
-            }   
-        }   
-        // 3.¸Ä±äÖ¸Ïò   
-        container = newTable;   
-           
-    }   
-       
-    /**  
-     *½«Ö¸¶¨µÄ½áµãtempÌí¼Óµ½Ö¸¶¨µÄhash±ítableµ±ÖĞ  
-     * Ìí¼ÓÊ±ÅĞ¶Ï¸Ã½áµãÊÇ·ñÒÑ¾­´æÔÚ  
-     * Èç¹ûÒÑ¾­´æÔÚ£¬·µ»Øfalse  
-     * Ìí¼Ó³É¹¦·µ»Øtrue  
-     * @param temp  
-     * @param table  
-     * @return  
-     */  
-    private boolean setEntry(Entry< K,V> temp,Entry[] table){   
-        // ¸ù¾İhashÖµÕÒµ½ÏÂ±ê   
-        int index = indexFor(temp.hash, table.length);   
-        //¸ù¾İÏÂ±êÕÒµ½¶ÔÓ¦ÔªËØ   
-        Entry< K, V> entry = table[index];   
-        // 3.Èô´æÔÚ   
-        if (null != entry) {   
-            // 3.1±éÀúÕû¸öÁ´±í£¬ÅĞ¶ÏÊÇ·ñÏàµÈ   
-            while (null != entry) {   
-                //ÅĞ¶ÏÏàµÈµÄÌõ¼şÊ±Ó¦¸Ã×¢Òâ£¬³ıÁË±È½ÏµØÖ·ÏàÍ¬Íâ£¬ÒıÓÃ´«µİµÄÏàµÈÓÃequals()·½·¨±È½Ï   
-                //ÏàµÈÔò²»´æ£¬·µ»Øfalse   
-             if ((temp.key == entry.key||temp.key.equals(entry.key)) && temp.hash == entry.hash&&(temp.value==entry.value||temp.value.equals(entry.value))) {   
-                    return false;   
-             }else if(temp.key == entry.key && temp.value != entry.value) { 
-                     entry.value = temp.value; 
-                    return true; 
-              }		 
-                //²»ÏàµÈÔò±È½ÏÏÂÒ»¸öÔªËØ   
-                else if (temp.key != entry.key) {   
-                        //µ½´ï¶ÓÎ²£¬ÖĞ¶ÏÑ­»·   
-                        if(null==entry.next){   
-                            break;   
-                        }   
-                        // Ã»ÓĞµ½´ï¶ÓÎ²£¬¼ÌĞø±éÀúÏÂÒ»¸öÔªËØ   
-                        entry = entry.next;   
-                }   
-            }   
-            // 3.2µ±±éÀúµ½ÁË¶ÓÎ²£¬Èç¹û¶¼Ã»ÓĞÏàÍ¬µÄÔªËØ£¬Ôò½«¸ÃÔªËØ¹ÒÔÚ¶ÓÎ²   
-            addEntry2Last(entry,temp);   
-               return true;
-        }   
-        // 4.Èô²»´æÔÚ,Ö±½ÓÉèÖÃ³õÊ¼»¯ÔªËØ   
-        setFirstEntry(temp,index,table);   
-        return true;   
-    }   
-       
-    private void addEntry2Last(Entry< K, V> entry, Entry< K, V> temp) {   
-        if (size > max) {   
-            reSize(container.length * 4);   
-        }   
-        entry.next=temp;   
-           
-    }   
-  
-    /**  
-     * ½«Ö¸¶¨½áµãtemp£¬Ìí¼Óµ½Ö¸¶¨µÄhash±ítableµÄÖ¸¶¨ÏÂ±êindexÖĞ  
-     * @param temp  
-     * @param index  
-     * @param table  
-     */  
-    private void setFirstEntry(Entry< K, V> temp, int index, Entry[] table) {   
-        // 1.ÅĞ¶Ïµ±Ç°ÈİÁ¿ÊÇ·ñ³¬±ê£¬Èç¹û³¬±ê£¬µ÷ÓÃÀ©Èİ·½·¨   
-        if (size > max) {   
-            reSize(table.length * 4);   
-        }   
-        // 2.²»³¬±ê£¬»òÕßÀ©ÈİÒÔºó£¬ÉèÖÃÔªËØ   
-        table[index] = temp;   
-        //£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡   
-        //ÒòÎªÃ¿´ÎÉèÖÃºó¶¼ÊÇĞÂµÄÁ´±í£¬ĞèÒª½«Æäºó½ÓµÄ½áµã¶¼È¥µô   
-         //NND£¬ÉÙÕâÒ»ĞĞ´úÂë¿¨ÁË¸ç¸ç7¸öĞ¡Ê±£¨´úÂëÖØ¹¹£©   
-        temp.next=null;   
-    }   
-  
-    /**  
-     * È¡  
-     *   
-     * @param k  
-     * @return  
-     */  
-    public V get(K k) {   
-        Entry< K, V> entry = null;   
-        // 1.¼ÆËãKµÄhashÖµ   
-        int hash = k.hashCode();   
-        // 2.¸ù¾İhashÖµÕÒµ½ÏÂ±ê   
-        int index = indexFor(hash, container.length);   
-        // 3¡£¸ù¾İindexÕÒµ½Á´±í   
-        entry = container[index];   
-        // 3¡£ÈôÁ´±íÎª¿Õ£¬·µ»Ønull   
-        if (null == entry) {   
-            return null;   
-        }   
-        // 4¡£Èô²»Îª¿Õ£¬±éÀúÁ´±í£¬±È½ÏkÊÇ·ñÏàµÈ,Èç¹ûkÏàµÈ£¬Ôò·µ»Ø¸Ãvalue   
-        while (null != entry) {   
-            if (k == entry.key||entry.key.equals(k)) {   
-                return entry.value;   
-            }   
-            entry = entry.next;   
-        }   
-        // Èç¹û±éÀúÍêÁË²»ÏàµÈ£¬Ôò·µ»Ø¿Õ   
-        return null;   
-  
-    }   
-  
-    /**  
-     * ¸ù¾İhashÂë£¬ÈİÆ÷Êı×éµÄ³¤¶È,¼ÆËã¸Ã¹şÏ£ÂëÔÚÈİÆ÷Êı×éÖĞµÄÏÂ±êÖµ  
-     *   
-     * @param hashcode  
-     * @param containerLength  
-     * @return  
-     */  
-    public int indexFor(int hashcode, int containerLength) {   
-        return hashcode & (containerLength - 1);   
-  
-    }   
-  
-    /**  
-     * ÓÃÀ´Êµ¼Ê±£´æÊı¾İµÄÄÚ²¿Àà,ÒòÎª²ÉÓÃ¹ÒÁ´·¨½â¾ö³åÍ»£¬´ËÄÚ²¿ÀàÉè¼ÆÎªÁ´±íĞÎÊ½  
-     *   
-     * @param < K>key  
-     * @param < V>  
-     *            value  
-     */  
-    class Entry< K, V> {   
-        Entry< K, V> next;// ÏÂÒ»¸ö½áµã   
-        K key;// key   
-        V value;// value   
-        int hash;// Õâ¸ökey¶ÔÓ¦µÄhashÂë£¬×÷ÎªÒ»¸ö³ÉÔ±±äÁ¿£¬µ±ÏÂ´ÎĞèÒªÓÃµÄÊ±ºò¿ÉÒÔ²»ÓÃÖØĞÂ¼ÆËã   
-  
-        // ¹¹Ôì·½·¨   
-        Entry(K k, V v, int hash) {   
-            this.key = k;   
-            this.value = v;   
-            this.hash = hash;   
-  
-        }   
-  
-        //ÏàÓ¦µÄgetter()·½·¨   
-  
-    }   
-}  
+public class MyMap< K, V> {
+    private int size;// å½“å‰å®¹é‡
+    private static int INIT_CAPACITY = 16;// é»˜è®¤å®¹é‡
+    private Entry< K, V>[] container;// å®é™…å­˜å‚¨æ•°æ®çš„æ•°ç»„å¯¹è±¡
+    private static float LOAD_FACTOR = 0.75f;// è£…è½½å› å­
+    private int max;// èƒ½å­˜çš„æœ€å¤§çš„æ•°=capacity*factor
+
+    // è‡ªå·±è®¾ç½®å®¹é‡å’Œè£…è½½å› å­çš„æ„é€ å™¨
+    public MyMap(int init_Capaticy, float load_factor) {
+        if (init_Capaticy < 0)
+            throw new IllegalArgumentException("Illegal initial capacity: "
+                    + init_Capaticy);
+        if (load_factor <= 0 || Float.isNaN(load_factor))
+            throw new IllegalArgumentException("Illegal load factor: "  + load_factor);
+        this.LOAD_FACTOR = load_factor;
+        max = (int) (init_Capaticy * load_factor);
+        container = new Entry[init_Capaticy];
+    }
+
+    // ä½¿ç”¨é»˜è®¤å‚æ•°çš„æ„é€ å™¨
+    public MyMap() {
+        this(INIT_CAPACITY, LOAD_FACTOR);
+    }
+
+    /**
+     * å­˜
+     *
+     * @param k
+     * @param v
+     * @return
+     */
+    public boolean put(K k, V v) {
+        // 1.è®¡ç®—Kçš„hashå€¼
+        // å› ä¸ºè‡ªå·±å¾ˆéš¾å†™å‡ºå¯¹ä¸åŒçš„ç±»å‹éƒ½é€‚ç”¨çš„Hashç®—æ³•ï¼Œæ•…è°ƒç”¨JDKç»™å‡ºçš„hashCode()æ–¹æ³•æ¥è®¡ç®—hashå€¼
+        int hash = k.hashCode();
+        //å°†æ‰€æœ‰ä¿¡æ¯å°è£…ä¸ºä¸€ä¸ªEntry
+        Entry< K,V> temp=new Entry(k,v,hash);
+        if(setEntry(temp, container)){
+            // å¤§å°åŠ ä¸€
+            size++;
+            return true;
+        }
+        return false;
+    }
+
+
+    /**
+     * æ‰©å®¹çš„æ–¹æ³•
+     *
+     * @param newSize
+     *            æ–°çš„å®¹å™¨å¤§å°
+     */
+    private void reSize(int newSize) {
+        // 1.å£°æ˜æ–°æ•°ç»„
+        Entry< K, V>[] newTable = new Entry[newSize];
+        max = (int) (newSize * LOAD_FACTOR);
+        // 2.å¤åˆ¶å·²æœ‰å…ƒç´ ,å³éå†æ‰€æœ‰å…ƒç´ ï¼Œæ¯ä¸ªå…ƒç´ å†å­˜ä¸€é
+        for (int j = 0; j < container.length; j++) {
+            Entry< K, V> entry = container[j];
+            //å› ä¸ºæ¯ä¸ªæ•°ç»„å…ƒç´ å…¶å®ä¸ºé“¾è¡¨ï¼Œæ‰€ä»¥â€¦â€¦â€¦â€¦
+            while (null != entry) {
+                setEntry(entry, newTable);
+                entry = entry.next;
+            }
+        }
+        // 3.æ”¹å˜æŒ‡å‘
+        container = newTable;
+
+    }
+
+    /**
+     *å°†æŒ‡å®šçš„ç»“ç‚¹tempæ·»åŠ åˆ°æŒ‡å®šçš„hashè¡¨tableå½“ä¸­
+     * æ·»åŠ æ—¶åˆ¤æ–­è¯¥ç»“ç‚¹æ˜¯å¦å·²ç»å­˜åœ¨
+     * å¦‚æœå·²ç»å­˜åœ¨ï¼Œè¿”å›false
+     * æ·»åŠ æˆåŠŸè¿”å›true
+     * @param temp
+     * @param table
+     * @return
+     */
+    private boolean setEntry(Entry< K,V> temp,Entry[] table){
+        // æ ¹æ®hashå€¼æ‰¾åˆ°ä¸‹æ ‡
+        int index = indexFor(temp.hash, table.length);
+        //æ ¹æ®ä¸‹æ ‡æ‰¾åˆ°å¯¹åº”å…ƒç´ 
+        Entry< K, V> entry = table[index];
+        // 3.è‹¥å­˜åœ¨
+        if (null != entry) {
+            // 3.1éå†æ•´ä¸ªé“¾è¡¨ï¼Œåˆ¤æ–­æ˜¯å¦ç›¸ç­‰
+            while (null != entry) {
+                //åˆ¤æ–­ç›¸ç­‰çš„æ¡ä»¶æ—¶åº”è¯¥æ³¨æ„ï¼Œé™¤äº†æ¯”è¾ƒåœ°å€ç›¸åŒå¤–ï¼Œå¼•ç”¨ä¼ é€’çš„ç›¸ç­‰ç”¨equals()æ–¹æ³•æ¯”è¾ƒ
+                //ç›¸ç­‰åˆ™ä¸å­˜ï¼Œè¿”å›false
+                if ((temp.key == entry.key||temp.key.equals(entry.key)) && temp.hash == entry.hash&&(temp.value==entry.value||temp.value.equals(entry.value))) {
+                    return false;
+                }else if(temp.key == entry.key && temp.value != entry.value) {
+                    entry.value = temp.value;
+                    return true;
+                }
+                //ä¸ç›¸ç­‰åˆ™æ¯”è¾ƒä¸‹ä¸€ä¸ªå…ƒç´ 
+                else if (temp.key != entry.key) {
+                    //åˆ°è¾¾é˜Ÿå°¾ï¼Œä¸­æ–­å¾ªç¯
+                    if(null==entry.next){
+                        break;
+                    }
+                    // æ²¡æœ‰åˆ°è¾¾é˜Ÿå°¾ï¼Œç»§ç»­éå†ä¸‹ä¸€ä¸ªå…ƒç´ 
+                    entry = entry.next;
+                }
+            }
+            // 3.2å½“éå†åˆ°äº†é˜Ÿå°¾ï¼Œå¦‚æœéƒ½æ²¡æœ‰ç›¸åŒçš„å…ƒç´ ï¼Œåˆ™å°†è¯¥å…ƒç´ æŒ‚åœ¨é˜Ÿå°¾
+            addEntry2Last(entry,temp);
+            return true;
+        }
+        // 4.è‹¥ä¸å­˜åœ¨,ç›´æ¥è®¾ç½®åˆå§‹åŒ–å…ƒç´ 
+        setFirstEntry(temp,index,table);
+        return true;
+    }
+
+    private void addEntry2Last(Entry< K, V> entry, Entry< K, V> temp) {
+        if (size > max) {
+            reSize(container.length * 4);
+        }
+        entry.next=temp;
+
+    }
+
+    /**
+     * å°†æŒ‡å®šç»“ç‚¹tempï¼Œæ·»åŠ åˆ°æŒ‡å®šçš„hashè¡¨tableçš„æŒ‡å®šä¸‹æ ‡indexä¸­
+     * @param temp
+     * @param index
+     * @param table
+     */
+    private void setFirstEntry(Entry< K, V> temp, int index, Entry[] table) {
+        // 1.åˆ¤æ–­å½“å‰å®¹é‡æ˜¯å¦è¶…æ ‡ï¼Œå¦‚æœè¶…æ ‡ï¼Œè°ƒç”¨æ‰©å®¹æ–¹æ³•
+        if (size > max) {
+            reSize(table.length * 4);
+        }
+        // 2.ä¸è¶…æ ‡ï¼Œæˆ–è€…æ‰©å®¹ä»¥åï¼Œè®¾ç½®å…ƒç´ 
+        table[index] = temp;
+        //ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼
+        //å› ä¸ºæ¯æ¬¡è®¾ç½®åéƒ½æ˜¯æ–°çš„é“¾è¡¨ï¼Œéœ€è¦å°†å…¶åæ¥çš„ç»“ç‚¹éƒ½å»æ‰
+        //NNDï¼Œå°‘è¿™ä¸€è¡Œä»£ç å¡äº†å“¥å“¥7ä¸ªå°æ—¶ï¼ˆä»£ç é‡æ„ï¼‰
+        temp.next=null;
+    }
+
+    /**
+     * å–
+     *
+     * @param k
+     * @return
+     */
+    public V get(K k) {
+        Entry< K, V> entry = null;
+        // 1.è®¡ç®—Kçš„hashå€¼
+        int hash = k.hashCode();
+        // 2.æ ¹æ®hashå€¼æ‰¾åˆ°ä¸‹æ ‡
+        int index = indexFor(hash, container.length);
+        // 3ã€‚æ ¹æ®indexæ‰¾åˆ°é“¾è¡¨
+        entry = container[index];
+        // 3ã€‚è‹¥é“¾è¡¨ä¸ºç©ºï¼Œè¿”å›null
+        if (null == entry) {
+            return null;
+        }
+        // 4ã€‚è‹¥ä¸ä¸ºç©ºï¼Œéå†é“¾è¡¨ï¼Œæ¯”è¾ƒkæ˜¯å¦ç›¸ç­‰,å¦‚æœkç›¸ç­‰ï¼Œåˆ™è¿”å›è¯¥value
+        while (null != entry) {
+            if (k == entry.key||entry.key.equals(k)) {
+                return entry.value;
+            }
+            entry = entry.next;
+        }
+        // å¦‚æœéå†å®Œäº†ä¸ç›¸ç­‰ï¼Œåˆ™è¿”å›ç©º
+        return null;
+
+    }
+
+    /**
+     * æ ¹æ®hashç ï¼Œå®¹å™¨æ•°ç»„çš„é•¿åº¦,è®¡ç®—è¯¥å“ˆå¸Œç åœ¨å®¹å™¨æ•°ç»„ä¸­çš„ä¸‹æ ‡å€¼
+     *
+     * @param hashcode
+     * @param containerLength
+     * @return
+     */
+    public int indexFor(int hashcode, int containerLength) {
+        return hashcode & (containerLength - 1);
+
+    }
+
+    /**
+     * ç”¨æ¥å®é™…ä¿å­˜æ•°æ®çš„å†…éƒ¨ç±»,å› ä¸ºé‡‡ç”¨æŒ‚é“¾æ³•è§£å†³å†²çªï¼Œæ­¤å†…éƒ¨ç±»è®¾è®¡ä¸ºé“¾è¡¨å½¢å¼
+     *
+     * @param < K>key
+     * @param < V>
+     *            value
+     */
+    class Entry< K, V> {
+        Entry< K, V> next;// ä¸‹ä¸€ä¸ªç»“ç‚¹
+        K key;// key
+        V value;// value
+        int hash;// è¿™ä¸ªkeyå¯¹åº”çš„hashç ï¼Œä½œä¸ºä¸€ä¸ªæˆå‘˜å˜é‡ï¼Œå½“ä¸‹æ¬¡éœ€è¦ç”¨çš„æ—¶å€™å¯ä»¥ä¸ç”¨é‡æ–°è®¡ç®—
+
+        // æ„é€ æ–¹æ³•
+        Entry(K k, V v, int hash) {
+            this.key = k;
+            this.value = v;
+            this.hash = hash;
+
+        }
+
+        //ç›¸åº”çš„getter()æ–¹æ³•
+
+    }
+}

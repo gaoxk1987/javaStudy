@@ -2,7 +2,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç3:07:18
+ * Createdate: ä¸‹åˆ3:07:18
  * Version: 1.0
  *
  */
@@ -21,55 +21,55 @@ import java.util.Iterator;
 import java.util.Set;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-9 ÏÂÎç3:07:18
+ * @date 2014-6-9 ä¸‹åˆ3:07:18
  */
 
 public class SelectorServerTest {
 
 	public static void main(String args[]) throws IOException,
 			InterruptedException {
-		Selector selector = Selector.open(); // ´´½¨Selector
+		Selector selector = Selector.open(); // åˆ›å»ºSelector
 
-		// ´´½¨Ò»¸öÓÃÓÚ½¨Á¢Á¬½ÓµÄServerSocketChannel
+		// åˆ›å»ºä¸€ä¸ªç”¨äºå»ºç«‹è¿æ¥çš„ServerSocketChannel
 		ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();
 		InetSocketAddress address = new InetSocketAddress(
 				InetAddress.getLocalHost(), 10000);
 		serverSocketChannel.socket().bind(address);
 		serverSocketChannel.configureBlocking(false);
-		serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT); // ×¢²áAcceptÊÂ¼ş
+		serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT); // æ³¨å†ŒAcceptäº‹ä»¶
 
 		while (true) {
-			if (selector.select() > 0) { // Èç¹û×¢²áµÄÊÂ¼ş·¢Éú
-				Set<SelectionKey> selectedKeys = selector.selectedKeys(); // »ñÈ¡·¢ÉúµÄÊÂ¼ş
-				Iterator<SelectionKey> it = selectedKeys.iterator(); // ÒÀ´Î½øĞĞ´¦Àí
+			if (selector.select() > 0) { // å¦‚æœæ³¨å†Œçš„äº‹ä»¶å‘ç”Ÿ
+				Set<SelectionKey> selectedKeys = selector.selectedKeys(); // è·å–å‘ç”Ÿçš„äº‹ä»¶
+				Iterator<SelectionKey> it = selectedKeys.iterator(); // ä¾æ¬¡è¿›è¡Œå¤„ç†
 				while (it.hasNext()) {
 					SelectionKey selectionKey = it.next();
-					if (selectionKey.isAcceptable()) { // Èç¹ûÊÇAcceptÊÂ¼ş
-						// »ñÈ¡×¢²áµÄServerSocketChannel
+					if (selectionKey.isAcceptable()) { // å¦‚æœæ˜¯Acceptäº‹ä»¶
+						// è·å–æ³¨å†Œçš„ServerSocketChannel
 						serverSocketChannel = ((ServerSocketChannel) selectionKey.channel());
-						SocketChannel socketChannel = serverSocketChannel.accept(); // ½¨Á¢Á¬½Ó
+						SocketChannel socketChannel = serverSocketChannel.accept(); // å»ºç«‹è¿æ¥
 						socketChannel.configureBlocking(false);
-						socketChannel.register(selector, SelectionKey.OP_READ); // ×¢²á¸ÃÁ¬½ÓµÄReadÊÂ¼ş
+						socketChannel.register(selector, SelectionKey.OP_READ); // æ³¨å†Œè¯¥è¿æ¥çš„Readäº‹ä»¶
 						System.out.println("Connected: "
 								+ socketChannel.socket()
-										.getRemoteSocketAddress());
-					} else if (selectionKey.isReadable()) { // Èç¹ûÊÇReadÊÂ¼ş
-						// »ñÈ¡×¢²áµÄSocketChannel
+								.getRemoteSocketAddress());
+					} else if (selectionKey.isReadable()) { // å¦‚æœæ˜¯Readäº‹ä»¶
+						// è·å–æ³¨å†Œçš„SocketChannel
 						SocketChannel socketChannel = (SocketChannel) selectionKey
 								.channel();
 						ByteBuffer buffer = ByteBuffer.allocate(1024);
-						while (socketChannel.read(buffer) > 0) { // ¶ÁÈ¡½ÓÊÕµ½µÄÊı¾İ
+						while (socketChannel.read(buffer) > 0) { // è¯»å–æ¥æ”¶åˆ°çš„æ•°æ®
 							buffer.flip();
 							byte[] dst = new byte[buffer.limit()];
 							buffer.get(dst);
 							System.out.println(new String(dst));
 						}
 					}
-					it.remove(); // ĞèÒª½«´¦Àí¹ıµÄÊÂ¼şÒÆ³ı
+					it.remove(); // éœ€è¦å°†å¤„ç†è¿‡çš„äº‹ä»¶ç§»é™¤
 				}
 			}
 			Thread.sleep(100);

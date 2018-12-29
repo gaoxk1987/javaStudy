@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ионГ11:35:03
+ * Createdate: 11:35:03
  * Version: 1.0
  *
  */
@@ -11,21 +10,21 @@
 package com.bceden.pattern.Builder.model;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-8-27 ионГ11:35:03   
+ * @date 2014-8-27 11:35:03   
  */
 
 public class House {
-	
-	private String door;
-    
+
+    private String door;
+
     private String floor;
-    
+
     private String wall;
-    
+
     private String windows;
 
     public String getDoor() {

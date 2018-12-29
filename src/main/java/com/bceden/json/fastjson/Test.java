@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç3:23:12
+ * Createdate: ä¸‹åˆ3:23:12
  * Version: 1.0
  *
  */
@@ -16,37 +15,37 @@ import java.util.List;
 import com.alibaba.fastjson.JSONObject;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-5-27 ÏÂÎç3:23:12   
+ * @date 2014-5-27 ä¸‹åˆ3:23:12   
  */
 
 public class Test {
 
 	/**
-	 * 
+	 *
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-5-27 ÏÂÎç3:23:12
+	 * @date 2014-5-27 ä¸‹åˆ3:23:12
 	 * @param args void
 	 */
 
 	public static void main(String[] args) {
-		Firend firstF = new Firend("Ğ¡Íõ","ÄĞ");
-		Firend secondF = new Firend("Ğ¡Àî","Å®");
+		Firend firstF = new Firend("å°ç‹","ç”·");
+		Firend secondF = new Firend("å°æ","å¥³");
 		User user = new User();
-		user.setName("ÀÏ¹ù");
-		user.setSex("ÈËÑı");
+		user.setName("è€éƒ­");
+		user.setSex("äººå¦–");
 		List<Firend> fList = new ArrayList<Firend>();
 		fList.add(firstF);
 		fList.add(secondF);
 		user.setFirends(fList);
-		
+
 		String str =JSONObject.toJSONString(user);
 		System.out.println(str);
-		
+
 		User user2 = JSONObject.parseObject(str, User.class);
 		List<Firend> fList2 = user2.getFirends();
 		for(Firend fir:fList2){

@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç10:21:37
+ * Createdate: ä¸Šåˆ10:21:37
  * Version: 1.0
  *
  */
@@ -13,30 +12,30 @@ package com.bceden.reflection.factory;
 import java.util.List;
 
 /**
- * ÃæÏò½Ó¿Ú±à³Ì
- * ·´Éä¹¤³§½Ó¿Ú
+ * é¢å‘æ¥å£ç¼–ç¨‹
+ * åå°„å·¥å‚æ¥å£
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-23 ÉÏÎç10:21:37   
+ * @date 2014-6-23 ä¸Šåˆ10:21:37   
  */
 public interface ObjectFactory {
 	/**
-	 * 
-	 * ÀûÓÃÄ¬ÈÏµÄ¹¹Ôìº¯Êı´´½¨Ò»¸ö¶ÔÏó
+	 *
+	 * åˆ©ç”¨é»˜è®¤çš„æ„é€ å‡½æ•°åˆ›å»ºä¸€ä¸ªå¯¹è±¡
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-6-23 ÉÏÎç10:25:05
+	 * @date 2014-6-23 ä¸Šåˆ10:25:05
 	 * @param type
 	 * @return T
 	 */
 	<T> T createObject(Class<T> type);
-	
+
 	/**
-	 * ÀûÓÃÌØ¶¨µÄ¹¹Ôìº¯ÊıºÍ²ÎÊıÖµ´´½¨¶ÔÏó
+	 * åˆ©ç”¨ç‰¹å®šçš„æ„é€ å‡½æ•°å’Œå‚æ•°å€¼åˆ›å»ºå¯¹è±¡
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-6-23 ÉÏÎç10:37:44
+	 * @date 2014-6-23 ä¸Šåˆ10:37:44
 	 * @param type
 	 * @param constructorArgTypes
 	 * @param constructorArgs

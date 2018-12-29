@@ -2,7 +2,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç5:31:04
+ * Createdate: ä¸‹åˆ5:31:04
  * Version: 1.0
  *
  */
@@ -16,11 +16,11 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-26 ÏÂÎç5:31:04
+ * @date 2014-6-26 ä¸‹åˆ5:31:04
  */
 
 public class ScheduledExceutorTest2 implements Runnable {
@@ -38,41 +38,41 @@ public class ScheduledExceutorTest2 implements Runnable {
 	}
 
 	/**
-	 * ¼ÆËã´Óµ±Ç°Ê±¼äcurrentDate¿ªÊ¼£¬Âú×ãÌõ¼şdayOfWeek, hourOfDay, minuteOfHour,
-	 * secondOfMiniteµÄ×î½üÊ±¼ä
-	 * 
+	 * è®¡ç®—ä»å½“å‰æ—¶é—´currentDateå¼€å§‹ï¼Œæ»¡è¶³æ¡ä»¶dayOfWeek, hourOfDay, minuteOfHour,
+	 * secondOfMiniteçš„æœ€è¿‘æ—¶é—´
+	 *
 	 * @return
 	 */
 	public Calendar getEarliestDate(Calendar currentDate, int dayOfWeek,
-			int hourOfDay, int minuteOfHour, int secondOfMinite) {
-		// ¼ÆËãµ±Ç°Ê±¼äµÄWEEK_OF_YEAR,DAY_OF_WEEK, HOUR_OF_DAY, MINUTE,SECONDµÈ¸÷¸ö×Ö¶ÎÖµ
+									int hourOfDay, int minuteOfHour, int secondOfMinite) {
+		// è®¡ç®—å½“å‰æ—¶é—´çš„WEEK_OF_YEAR,DAY_OF_WEEK, HOUR_OF_DAY, MINUTE,SECONDç­‰å„ä¸ªå­—æ®µå€¼
 		int currentWeekOfYear = currentDate.get(Calendar.WEEK_OF_YEAR);
 		int currentDayOfWeek = currentDate.get(Calendar.DAY_OF_WEEK);
 		int currentHour = currentDate.get(Calendar.HOUR_OF_DAY);
 		int currentMinute = currentDate.get(Calendar.MINUTE);
 		int currentSecond = currentDate.get(Calendar.SECOND);
 
-		// Èç¹ûÊäÈëÌõ¼şÖĞµÄdayOfWeekĞ¡ÓÚµ±Ç°ÈÕÆÚµÄdayOfWeek,ÔòWEEK_OF_YEARĞèÒªÍÆ³ÙÒ»ÖÜ
+		// å¦‚æœè¾“å…¥æ¡ä»¶ä¸­çš„dayOfWeekå°äºå½“å‰æ—¥æœŸçš„dayOfWeek,åˆ™WEEK_OF_YEARéœ€è¦æ¨è¿Ÿä¸€å‘¨
 		boolean weekLater = false;
 		if (dayOfWeek < currentDayOfWeek) {
 			weekLater = true;
 		} else if (dayOfWeek == currentDayOfWeek) {
-			// µ±ÊäÈëÌõ¼şÓëµ±Ç°ÈÕÆÚµÄdayOfWeekÏàµÈÊ±£¬Èç¹ûÊäÈëÌõ¼şÖĞµÄ
-			// hourOfDayĞ¡ÓÚµ±Ç°ÈÕÆÚµÄ
-			// currentHour£¬ÔòWEEK_OF_YEARĞèÒªÍÆ³ÙÒ»ÖÜ
+			// å½“è¾“å…¥æ¡ä»¶ä¸å½“å‰æ—¥æœŸçš„dayOfWeekç›¸ç­‰æ—¶ï¼Œå¦‚æœè¾“å…¥æ¡ä»¶ä¸­çš„
+			// hourOfDayå°äºå½“å‰æ—¥æœŸçš„
+			// currentHourï¼Œåˆ™WEEK_OF_YEARéœ€è¦æ¨è¿Ÿä¸€å‘¨
 			if (hourOfDay < currentHour) {
 				weekLater = true;
 			} else if (hourOfDay == currentHour) {
-				// µ±ÊäÈëÌõ¼şÓëµ±Ç°ÈÕÆÚµÄdayOfWeek, hourOfDayÏàµÈÊ±£¬
-				// Èç¹ûÊäÈëÌõ¼şÖĞµÄminuteOfHourĞ¡ÓÚµ±Ç°ÈÕÆÚµÄ
-				// currentMinute£¬ÔòWEEK_OF_YEARĞèÒªÍÆ³ÙÒ»ÖÜ
+				// å½“è¾“å…¥æ¡ä»¶ä¸å½“å‰æ—¥æœŸçš„dayOfWeek, hourOfDayç›¸ç­‰æ—¶ï¼Œ
+				// å¦‚æœè¾“å…¥æ¡ä»¶ä¸­çš„minuteOfHourå°äºå½“å‰æ—¥æœŸçš„
+				// currentMinuteï¼Œåˆ™WEEK_OF_YEARéœ€è¦æ¨è¿Ÿä¸€å‘¨
 				if (minuteOfHour < currentMinute) {
 					weekLater = true;
 				} else if (minuteOfHour == currentSecond) {
-					// µ±ÊäÈëÌõ¼şÓëµ±Ç°ÈÕÆÚµÄdayOfWeek, hourOfDay£¬
-					// minuteOfHourÏàµÈÊ±£¬Èç¹ûÊäÈëÌõ¼şÖĞµÄ
-					// secondOfMiniteĞ¡ÓÚµ±Ç°ÈÕÆÚµÄcurrentSecond£¬
-					// ÔòWEEK_OF_YEARĞèÒªÍÆ³ÙÒ»ÖÜ
+					// å½“è¾“å…¥æ¡ä»¶ä¸å½“å‰æ—¥æœŸçš„dayOfWeek, hourOfDayï¼Œ
+					// minuteOfHourç›¸ç­‰æ—¶ï¼Œå¦‚æœè¾“å…¥æ¡ä»¶ä¸­çš„
+					// secondOfMiniteå°äºå½“å‰æ—¥æœŸçš„currentSecondï¼Œ
+					// åˆ™WEEK_OF_YEARéœ€è¦æ¨è¿Ÿä¸€å‘¨
 					if (secondOfMinite < currentSecond) {
 						weekLater = true;
 					}
@@ -80,10 +80,10 @@ public class ScheduledExceutorTest2 implements Runnable {
 			}
 		}
 		if (weekLater) {
-			// ÉèÖÃµ±Ç°ÈÕÆÚÖĞµÄWEEK_OF_YEARÎªµ±Ç°ÖÜÍÆ³ÙÒ»ÖÜ
+			// è®¾ç½®å½“å‰æ—¥æœŸä¸­çš„WEEK_OF_YEARä¸ºå½“å‰å‘¨æ¨è¿Ÿä¸€å‘¨
 			currentDate.set(Calendar.WEEK_OF_YEAR, currentWeekOfYear + 1);
 		}
-		// ÉèÖÃµ±Ç°ÈÕÆÚÖĞµÄDAY_OF_WEEK,HOUR_OF_DAY,MINUTE,SECONDÎªÊäÈëÌõ¼şÖĞµÄÖµ¡£
+		// è®¾ç½®å½“å‰æ—¥æœŸä¸­çš„DAY_OF_WEEK,HOUR_OF_DAY,MINUTE,SECONDä¸ºè¾“å…¥æ¡ä»¶ä¸­çš„å€¼ã€‚
 		currentDate.set(Calendar.DAY_OF_WEEK, dayOfWeek);
 		currentDate.set(Calendar.HOUR_OF_DAY, hourOfDay);
 		currentDate.set(Calendar.MINUTE, minuteOfHour);
@@ -95,23 +95,23 @@ public class ScheduledExceutorTest2 implements Runnable {
 	public static void main(String[] args) throws Exception {
 
 		ScheduledExceutorTest2 test = new ScheduledExceutorTest2("job1");
-		// »ñÈ¡µ±Ç°Ê±¼ä
+		// è·å–å½“å‰æ—¶é—´
 		Calendar currentDate = Calendar.getInstance();
 		long currentDateLong = currentDate.getTime().getTime();
 		System.out
 				.println("Current Date = " + currentDate.getTime().toString());
-		// ¼ÆËãÂú×ãÌõ¼şµÄ×î½üÒ»´ÎÖ´ĞĞÊ±¼ä
+		// è®¡ç®—æ»¡è¶³æ¡ä»¶çš„æœ€è¿‘ä¸€æ¬¡æ‰§è¡Œæ—¶é—´
 		Calendar earliestDate = test
 				.getEarliestDate(currentDate, 3, 16, 38, 10);
 		long earliestDateLong = earliestDate.getTime().getTime();
 		System.out.println("Earliest Date = "
 				+ earliestDate.getTime().toString());
-		// ¼ÆËã´Óµ±Ç°Ê±¼äµ½×î½üÒ»´ÎÖ´ĞĞÊ±¼äµÄÊ±¼ä¼ä¸ô
+		// è®¡ç®—ä»å½“å‰æ—¶é—´åˆ°æœ€è¿‘ä¸€æ¬¡æ‰§è¡Œæ—¶é—´çš„æ—¶é—´é—´éš”
 		long delay = earliestDateLong - currentDateLong;
-		// ¼ÆËãÖ´ĞĞÖÜÆÚÎªÒ»ĞÇÆÚ
+		// è®¡ç®—æ‰§è¡Œå‘¨æœŸä¸ºä¸€æ˜ŸæœŸ
 		long period = 7 * 24 * 60 * 60 * 1000;
 		ScheduledExecutorService service = Executors.newScheduledThreadPool(10);
-		// ´ÓÏÖÔÚ¿ªÊ¼delayºÁÃëÖ®ºó£¬Ã¿¸ôÒ»ĞÇÆÚÖ´ĞĞÒ»´Îjob1
+		// ä»ç°åœ¨å¼€å§‹delayæ¯«ç§’ä¹‹åï¼Œæ¯éš”ä¸€æ˜ŸæœŸæ‰§è¡Œä¸€æ¬¡job1
 		service.scheduleAtFixedRate(test, delay, period, TimeUnit.MILLISECONDS);
 
 	}

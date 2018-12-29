@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç2:54:44
+ * Createdate: ä¸‹åˆ2:54:44
  * Version: 1.0
  *
  */
@@ -11,18 +10,18 @@
 package com.bceden.pattern.factory;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-9-5 ÏÂÎç2:54:44   
+ * @date 2014-9-5 ä¸‹åˆ2:54:44   
  */
 
 public class BWork implements IWork {
 
 	@Override
 	public void doWork() {
-		System.out.println("×öµÄÊÇB¹¤×÷£¡£¡£¡");
+		System.out.println("åšçš„æ˜¯Bå·¥ä½œï¼ï¼ï¼");
 	}
 
 }

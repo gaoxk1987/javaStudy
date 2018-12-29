@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç10:26:44
+ * Createdate: ä¸Šåˆ10:26:44
  * Version: 1.0
  *
  */
@@ -22,66 +21,66 @@ import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-23 ÉÏÎç10:26:44   
+ * @date 2014-6-23 ä¸Šåˆ10:26:44   
  */
 
 public class DefaultObjectFactory implements ObjectFactory {
 
-	
+
 	public <T> T createObject(Class<T> type) {
-		//ÖØÓÃ½ÚÊ¡´úÂëµ÷ÓÃ¶à²ÎÊı·½·¨
+		//é‡ç”¨èŠ‚çœä»£ç è°ƒç”¨å¤šå‚æ•°æ–¹æ³•
 		return createObject(type, null, null);
 	}
 
 	public <T> T createObject(Class<T> type,List<Class<?>> constructorArgTypes, List<Object> constructorArgs) {
-		//´¦Àí½Ó¿ÚµÄÇé¿ö
-		 Class<?> classToCreate = resolveInterface(type);
-		 @SuppressWarnings("unchecked")
+		//å¤„ç†æ¥å£çš„æƒ…å†µ
+		Class<?> classToCreate = resolveInterface(type);
+		@SuppressWarnings("unchecked")
 		T created = (T) instantiateClass(classToCreate, constructorArgTypes, constructorArgs);
-		 return created;
+		return created;
 	}
-	
-	 private <T> T instantiateClass(Class<T> type, List<Class<?>> constructorArgTypes, List<Object> constructorArgs) {
-		 try {
-			   Constructor<T> constructor;
-				//ÀûÓÃÄ¬ÈÏ¹¹Ôìº¯Êı´´½¨¶ÔÏó
-				if(constructorArgTypes==null||constructorArgs == null){
-					   constructor = type.getDeclaredConstructor();
-					   if(!constructor.isAccessible()){
-						   constructor.setAccessible(true);
-					   }
-					  return constructor.newInstance();
-				}
-				//ĞÔÄÜÓÅ»¯µã£ºconstructorArgTypes.toArray(new Class[constructorArgTypes.size()])
-				constructor = type.getConstructor(constructorArgTypes.toArray(new Class[constructorArgTypes.size()]));
+
+	private <T> T instantiateClass(Class<T> type, List<Class<?>> constructorArgTypes, List<Object> constructorArgs) {
+		try {
+			Constructor<T> constructor;
+			//åˆ©ç”¨é»˜è®¤æ„é€ å‡½æ•°åˆ›å»ºå¯¹è±¡
+			if(constructorArgTypes==null||constructorArgs == null){
+				constructor = type.getDeclaredConstructor();
 				if(!constructor.isAccessible()){
 					constructor.setAccessible(true);
 				}
-				 return constructor.newInstance(constructorArgs.toArray(new Object[constructorArgs.size()]));
-			} catch (Exception e) {
-				e.printStackTrace();
-			} 
-		 return null;
-	 }
-	 
-	  protected Class<?> resolveInterface(Class<?> type) {
-		    Class<?> classToCreate;
-		    if (type == List.class || type == Collection.class || type == Iterable.class) {
-		      classToCreate = ArrayList.class;
-		    } else if (type == Map.class) {
-		      classToCreate = HashMap.class;
-		    } else if (type == SortedSet.class) { // issue #510 Collections Support
-		      classToCreate = TreeSet.class;
-		    } else if (type == Set.class) {
-		      classToCreate = HashSet.class;
-		    } else {
-		      classToCreate = type;
-		    }
-		    return classToCreate;
-		  }
+				return constructor.newInstance();
+			}
+			//æ€§èƒ½ä¼˜åŒ–ç‚¹ï¼šconstructorArgTypes.toArray(new Class[constructorArgTypes.size()])
+			constructor = type.getConstructor(constructorArgTypes.toArray(new Class[constructorArgTypes.size()]));
+			if(!constructor.isAccessible()){
+				constructor.setAccessible(true);
+			}
+			return constructor.newInstance(constructorArgs.toArray(new Object[constructorArgs.size()]));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	protected Class<?> resolveInterface(Class<?> type) {
+		Class<?> classToCreate;
+		if (type == List.class || type == Collection.class || type == Iterable.class) {
+			classToCreate = ArrayList.class;
+		} else if (type == Map.class) {
+			classToCreate = HashMap.class;
+		} else if (type == SortedSet.class) { // issue #510 Collections Support
+			classToCreate = TreeSet.class;
+		} else if (type == Set.class) {
+			classToCreate = HashSet.class;
+		} else {
+			classToCreate = type;
+		}
+		return classToCreate;
+	}
 
 }

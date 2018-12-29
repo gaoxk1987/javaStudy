@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç10:25:48
+ * Createdate: ä¸Šåˆ10:25:48
  * Version: 1.0
  *
  */
@@ -14,71 +13,71 @@ import java.util.Random;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
-/** *//** 
- * CyclicBarrierÀàËÆÓÚCountDownLatchÒ²ÊÇ¸ö¼ÆÊıÆ÷£¬ 
- * ²»Í¬µÄÊÇCyclicBarrierÊıµÄÊÇµ÷ÓÃÁËCyclicBarrier.await()½øÈëµÈ´ıµÄÏß³ÌÊı£¬ 
- * µ±Ïß³ÌÊı´ïµ½ÁËCyclicBarrier³õÊ¼Ê±¹æ¶¨µÄÊıÄ¿Ê±£¬ËùÓĞ½øÈëµÈ´ı×´Ì¬µÄÏß³Ì±»»½ĞÑ²¢¼ÌĞø¡£ 
- * CyclicBarrier¾ÍÏóËüÃû×ÖµÄÒâË¼Ò»Ñù£¬¿É¿´³ÉÊÇ¸öÕÏ°­£¬ 
- * ËùÓĞµÄÏß³Ì±ØĞëµ½Æëºó²ÅÄÜÒ»ÆğÍ¨¹ıÕâ¸öÕÏ°­¡£ 
- * CyclicBarrier³õÊ¼Ê±»¹¿É´øÒ»¸öRunnableµÄ²ÎÊı£¬ 
- * ´ËRunnableÈÎÎñÔÚCyclicBarrierµÄÊıÄ¿´ïµ½ºó£¬ËùÓĞÆäËüÏß³Ì±»»½ĞÑÇ°±»Ö´ĞĞ¡£ 
- */  
+/** *//**
+ * CyclicBarrierç±»ä¼¼äºCountDownLatchä¹Ÿæ˜¯ä¸ªè®¡æ•°å™¨ï¼Œ 
+ * ä¸åŒçš„æ˜¯CyclicBarrieræ•°çš„æ˜¯è°ƒç”¨äº†CyclicBarrier.await()è¿›å…¥ç­‰å¾…çš„çº¿ç¨‹æ•°ï¼Œ 
+ * å½“çº¿ç¨‹æ•°è¾¾åˆ°äº†CyclicBarrieråˆå§‹æ—¶è§„å®šçš„æ•°ç›®æ—¶ï¼Œæ‰€æœ‰è¿›å…¥ç­‰å¾…çŠ¶æ€çš„çº¿ç¨‹è¢«å”¤é†’å¹¶ç»§ç»­ã€‚ 
+ * CyclicBarrierå°±è±¡å®ƒåå­—çš„æ„æ€ä¸€æ ·ï¼Œå¯çœ‹æˆæ˜¯ä¸ªéšœç¢ï¼Œ 
+ * æ‰€æœ‰çš„çº¿ç¨‹å¿…é¡»åˆ°é½åæ‰èƒ½ä¸€èµ·é€šè¿‡è¿™ä¸ªéšœç¢ã€‚ 
+ * CyclicBarrieråˆå§‹æ—¶è¿˜å¯å¸¦ä¸€ä¸ªRunnableçš„å‚æ•°ï¼Œ 
+ * æ­¤Runnableä»»åŠ¡åœ¨CyclicBarrierçš„æ•°ç›®è¾¾åˆ°åï¼Œæ‰€æœ‰å…¶å®ƒçº¿ç¨‹è¢«å”¤é†’å‰è¢«æ‰§è¡Œã€‚ 
+ */
 public class CyclicBarrierTest {
-	
-	static class ComponentThread implements Runnable{
-			int  ID;
-			int[] array;
-			CyclicBarrier barrier;
-		
-		
-		public ComponentThread(int iD, int[] array, CyclicBarrier barrier) {
-				super();
-				ID = iD;
-				this.array = array;
-				this.barrier = barrier;
-			}
+
+    static class ComponentThread implements Runnable{
+        int  ID;
+        int[] array;
+        CyclicBarrier barrier;
 
 
-		@Override
-		public void run() {
-			 array[ID] = new Random().nextInt(100);  
-             System.out.println("Component " + ID + " generates: " + array[ID]);  
-             // ÔÚÕâÀïµÈ´ıBarrier´¦  
-             System.out.println("Component " + ID + " sleep");  
-             try {
-				barrier.await();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} catch (BrokenBarrierException e) {
-				e.printStackTrace();
-			}  
-             System.out.println("Component " + ID + " awaked");  
-             // ¼ÆËãÊı¾İÊı×éÖĞµÄµ±Ç°ÖµºÍºóĞøÖµ  
-             int result = array[ID] + array[ID + 1];  
-             System.out.println("Component " + ID + " result: " + result);  
-		}
-		
-	}
-	
-	/** *//** 
-     * ²âÊÔCyclicBarrierµÄÓÃ·¨ 
-     */  
-    public  static void testCyclicBarrier() {  
-        final int[] array = new int[3];  
-        CyclicBarrier barrier = new CyclicBarrier(2, new Runnable() {  
-            // ÔÚËùÓĞÏß³Ì¶¼µ½´ïBarrierÊ±Ö´ĞĞ  
-            public void run() {  
-                System.out.println("testCyclicBarrier run");  
-                array[2] = array[0] + array[1];  
-            }  
-        });  
-  
-        // Æô¶¯Ïß³Ì  
-        new Thread(new ComponentThread(0, array,barrier)).start();  
-        new Thread(new ComponentThread(1, array,barrier)).start();  
-    }  
-	public static void main(String[] args) {
-		  CyclicBarrierTest.testCyclicBarrier();
-	}
+        public ComponentThread(int iD, int[] array, CyclicBarrier barrier) {
+            super();
+            ID = iD;
+            this.array = array;
+            this.barrier = barrier;
+        }
+
+
+        @Override
+        public void run() {
+            array[ID] = new Random().nextInt(100);
+            System.out.println("Component " + ID + " generates: " + array[ID]);
+            // åœ¨è¿™é‡Œç­‰å¾…Barrierå¤„
+            System.out.println("Component " + ID + " sleep");
+            try {
+                barrier.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } catch (BrokenBarrierException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Component " + ID + " awaked");
+            // è®¡ç®—æ•°æ®æ•°ç»„ä¸­çš„å½“å‰å€¼å’Œåç»­å€¼
+            int result = array[ID] + array[ID + 1];
+            System.out.println("Component " + ID + " result: " + result);
+        }
+
+    }
+
+    /** *//**
+     * æµ‹è¯•CyclicBarrierçš„ç”¨æ³• 
+     */
+    public  static void testCyclicBarrier() {
+        final int[] array = new int[3];
+        CyclicBarrier barrier = new CyclicBarrier(2, new Runnable() {
+            // åœ¨æ‰€æœ‰çº¿ç¨‹éƒ½åˆ°è¾¾Barrieræ—¶æ‰§è¡Œ  
+            public void run() {
+                System.out.println("testCyclicBarrier run");
+                array[2] = array[0] + array[1];
+            }
+        });
+
+        // å¯åŠ¨çº¿ç¨‹  
+        new Thread(new ComponentThread(0, array,barrier)).start();
+        new Thread(new ComponentThread(1, array,barrier)).start();
+    }
+    public static void main(String[] args) {
+        CyclicBarrierTest.testCyclicBarrier();
+    }
 
 }

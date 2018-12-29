@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
- * Project: javaStudy 
+ * Project: javaStudy
  * Author: Gao xingkun
- * Createdate: ÉÏÎç10:09:39
+ * Createdate: ä¸Šåˆ10:09:39
  * Version: 1.0
  *
  */
@@ -22,71 +21,71 @@ import java.io.ObjectOutput;
 import java.io.ObjectOutputStream;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-5-12 ÉÏÎç10:09:39   
+ * @date 2014-5-12 ä¸Šåˆ10:09:39
  */
 
 public class TransientExterUse implements Externalizable{
-	private transient String content = "ÊÇµÄ£¬ÎÒ½«»á±»ĞòÁĞ»¯£¬²»¹ÜÎÒÊÇ·ñ±»transient¹Ø¼ü×ÖĞŞÊÎ";
-	
+	private transient String content = "æ˜¯çš„ï¼Œæˆ‘å°†ä¼šè¢«åºåˆ—åŒ–ï¼Œä¸ç®¡æˆ‘æ˜¯å¦è¢«transientå…³é”®å­—ä¿®é¥°";
+
 	/**
-	*
-	*/
-	
+	 *
+	 */
+
 	private static final long serialVersionUID = 1489149175514803456L;
 	/* (non-Javadoc)
-	* @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
-	*/
-	
+	 * @see java.io.Externalizable#writeExternal(java.io.ObjectOutput)
+	 */
+
 	@Override
 	public void writeExternal(ObjectOutput out) throws IOException {
 		out.writeObject(content);
 	}
 
-	
+
 	/* (non-Javadoc)
-	* @see java.io.Externalizable#readExternal(java.io.ObjectInput)
-	*/
-	
+	 * @see java.io.Externalizable#readExternal(java.io.ObjectInput)
+	 */
+
 	@Override
 	public void readExternal(ObjectInput in) throws IOException,
 			ClassNotFoundException {
 		content = (String) in.readObject();
 	}
-	
+
 	/**
-	 * 
+	 *
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-5-12 ÉÏÎç10:17:55
+	 * @date 2014-5-12 ä¸Šåˆ10:17:55
 	 * @param args void
 	 */
-	public static void main(String[] args) {     
-	TransientExterUse et = new TransientExterUse();
-   
-	try {
-		 ObjectOutput out = new ObjectOutputStream(new FileOutputStream( new File("test")));
-		    out.writeObject(et);
+	public static void main(String[] args) {
+		TransientExterUse et = new TransientExterUse();
 
-		    ObjectInput in;
-		in = new ObjectInputStream(new FileInputStream(new File("test")));
-	    et = (TransientExterUse) in.readObject();
-	    System.out.println(et.content);
+		try {
+			ObjectOutput out = new ObjectOutputStream(new FileOutputStream( new File("test")));
+			out.writeObject(et);
 
-	    out.close();
-	    in.close();
-	} catch (FileNotFoundException e) {
-		e.printStackTrace();
-	} catch (IOException e) {
-		e.printStackTrace();
-	} catch (ClassNotFoundException e) {
-		e.printStackTrace();
+			ObjectInput in;
+			in = new ObjectInputStream(new FileInputStream(new File("test")));
+			et = (TransientExterUse) in.readObject();
+			System.out.println(et.content);
+
+			out.close();
+			in.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
 	}
 
-  }
 
-	
 }

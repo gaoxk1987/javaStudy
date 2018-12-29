@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç11:40:23
+ * Createdate: ä¸Šåˆ11:40:23
  * Version: 1.0
  *
  */
@@ -14,32 +13,32 @@ import com.bceden.pattern.Builder.model.House;
 import com.bceden.pattern.Builder.service.IHouseBuilder;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-8-27 ÉÏÎç11:40:23   
+ * @date 2014-8-27 ä¸Šåˆ11:40:23   
  */
 
 public class HouseDirector {
-	public House buildHouse(IHouseBuilder builder){
-        /**
-         * ½¨Ôì·¿ÃÅ
-         */
-        builder.buildDoor();
-        /**
-         * ½¨ÔìµØ°å
-         */
-        builder.buildFloor();
-        /**
-         * ½¨ÔìÇ½±Ú
-         */
-        builder.buildWall();
-        /**
-         * ½¨Ôì´°»§
-         */
-        builder.buildWindows();
-        
-        return builder.getHouse();
-    }
+        public House buildHouse(IHouseBuilder builder){
+                /**
+                 * å»ºé€ æˆ¿é—¨
+                 */
+                builder.buildDoor();
+                /**
+                 * å»ºé€ åœ°æ¿
+                 */
+                builder.buildFloor();
+                /**
+                 * å»ºé€ å¢™å£
+                 */
+                builder.buildWall();
+                /**
+                 * å»ºé€ çª—æˆ·
+                 */
+                builder.buildWindows();
+
+                return builder.getHouse();
+        }
 }

@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç6:07:07
+ * Createdate: ä¸‹åˆ6:07:07
  * Version: 1.0
  *
  */
@@ -15,49 +15,49 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-4-15 ÏÂÎç6:07:07   
+ * @date 2014-4-15 ä¸‹åˆ6:07:07
  */
 
 public class Test {
-	 public static void main(String[] args) {   
-//		 	testHashMap();//Ô­Éúmap
-		 	testMyMap();//×Ô¼ºµÄmap
+    public static void main(String[] args) {
+//		 	testHashMap();//åŸç”Ÿmap
+        testMyMap();//è‡ªå·±çš„map
 //		 	BitSet bs = new BitSet();
 //		 	bs.set(12);
 //		 	bs.get(12)
-	    }   
-	 
-	 public static void testHashMap(){
-		   Map< String, String> mm = new HashMap< String, String>();    
-	        Long aBeginTime=System.currentTimeMillis();//¼ÇÂ¼BeginTime   
-	        for(int i=0;i< 1000000;i++){   
-	        mm.put(""+i, ""+i*100);   
-	        }   
-	        Long aEndTime=System.currentTimeMillis();//¼ÇÂ¼EndTime   
-	        System.out.println("insert time-->"+(aEndTime-aBeginTime));   
-	           
-	        Long lBeginTime=System.currentTimeMillis();//¼ÇÂ¼BeginTime   
-	        mm.get(""+100000);   
-	        Long lEndTime=System.currentTimeMillis();//¼ÇÂ¼EndTime   
-	        System.out.println("seach time--->"+(lEndTime-lBeginTime));   
-	 }
-	 
-	 public static void testMyMap(){
-		  MyMap< String, String> mm = new MyMap< String, String>();    
-	        Long aBeginTime=System.currentTimeMillis();//¼ÇÂ¼BeginTime   
-	        for(int i=0;i< 1000000;i++){   
-	        mm.put(""+i, ""+i*100);   
-	        }   
-	        Long aEndTime=System.currentTimeMillis();//¼ÇÂ¼EndTime   
-	        System.out.println("insert time-->"+(aEndTime-aBeginTime));   
-	           
-	        Long lBeginTime=System.currentTimeMillis();//¼ÇÂ¼BeginTime   
-	        mm.get(""+100000);   
-	        Long lEndTime=System.currentTimeMillis();//¼ÇÂ¼EndTime   
-	        System.out.println("seach time--->"+(lEndTime-lBeginTime));   
-	 }
+    }
+
+    public static void testHashMap(){
+        Map< String, String> mm = new HashMap< String, String>();
+        Long aBeginTime=System.currentTimeMillis();//è®°å½•BeginTime
+        for(int i=0;i< 1000000;i++){
+            mm.put(""+i, ""+i*100);
+        }
+        Long aEndTime=System.currentTimeMillis();//è®°å½•EndTime
+        System.out.println("insert time-->"+(aEndTime-aBeginTime));
+
+        Long lBeginTime=System.currentTimeMillis();//è®°å½•BeginTime
+        mm.get(""+100000);
+        Long lEndTime=System.currentTimeMillis();//è®°å½•EndTime
+        System.out.println("seach time--->"+(lEndTime-lBeginTime));
+    }
+
+    public static void testMyMap(){
+        MyMap< String, String> mm = new MyMap< String, String>();
+        Long aBeginTime=System.currentTimeMillis();//è®°å½•BeginTime
+        for(int i=0;i< 1000000;i++){
+            mm.put(""+i, ""+i*100);
+        }
+        Long aEndTime=System.currentTimeMillis();//è®°å½•EndTime
+        System.out.println("insert time-->"+(aEndTime-aBeginTime));
+
+        Long lBeginTime=System.currentTimeMillis();//è®°å½•BeginTime
+        mm.get(""+100000);
+        Long lEndTime=System.currentTimeMillis();//è®°å½•EndTime
+        System.out.println("seach time--->"+(lEndTime-lBeginTime));
+    }
 }

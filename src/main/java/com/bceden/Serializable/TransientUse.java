@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç10:09:39
+ * Createdate: ä¸Šåˆ10:09:39
  * Version: 1.0
  *
  */
@@ -19,16 +18,16 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-5-12 ÉÏÎç10:09:39   
+ * @date 2014-5-12 ä¸Šåˆ10:09:39   
  */
 
 public class TransientUse implements Serializable {
-	 private String user;
-	 private transient String pwd;
+	private String user;
+	private transient String pwd;
 	public String getUser() {
 		return user;
 	}
@@ -44,33 +43,33 @@ public class TransientUse implements Serializable {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	
+
 	/**
-	*
-	*/
-	
+	 *
+	 */
+
 	private static final long serialVersionUID = 1489149175514803456L;
 
 	/**
-	 * 
+	 *
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-5-12 ÉÏÎç10:09:39
+	 * @date 2014-5-12 ä¸Šåˆ10:09:39
 	 * @param args void
 	 */
 
-	
+
 	/**
-	 * 
+	 *
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-5-12 ÉÏÎç10:17:55
+	 * @date 2014-5-12 ä¸Šåˆ10:17:55
 	 * @param args void
 	 */
 	public static void main(String[] args) {
 		TransientUse tu =new TransientUse();
 		tu.setPwd("123");
-		tu.setUser("Ğ¡Ã÷£¡");
+		tu.setUser("å°æ˜ï¼");
 		try {
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("c:/transient.dat"));
 			os.writeObject(tu);
@@ -82,7 +81,7 @@ public class TransientUse implements Serializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/******************¶ÁÈ¡Íê³É***********************/
+		/******************è¯»å–å®Œæˆ***********************/
 		try {
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("c:/transient.dat"));
 			TransientUse tur = (TransientUse)ois.readObject();
@@ -100,7 +99,7 @@ public class TransientUse implements Serializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

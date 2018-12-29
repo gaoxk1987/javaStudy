@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç10:09:39
+ * Createdate: ä¸Šåˆ10:09:39
  * Version: 1.0
  *
  */
@@ -19,17 +18,17 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-5-12 ÉÏÎç10:09:39   
+ * @date 2014-5-12 ä¸Šåˆ10:09:39   
  */
 
 public class TransientStaticUse implements Serializable {
-	 private String user;
-	 private static String girlFriendName;
-	 private transient String pwd;
+	private String user;
+	private static String girlFriendName;
+	private transient String pwd;
 	public String getUser() {
 		return user;
 	}
@@ -45,7 +44,7 @@ public class TransientStaticUse implements Serializable {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	
+
 	public static String getGirlFriendName() {
 		return girlFriendName;
 	}
@@ -57,32 +56,32 @@ public class TransientStaticUse implements Serializable {
 
 
 	/**
-	*
-	*/
-	
+	 *
+	 */
+
 	private static final long serialVersionUID = 1489149175514803456L;
 
 	/**
-	 * 
+	 *
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-5-12 ÉÏÎç10:09:39
+	 * @date 2014-5-12 ä¸Šåˆ10:09:39
 	 * @param args void
 	 */
 
-	
+
 	/**
-	 * 
+	 *
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-5-12 ÉÏÎç10:17:55
+	 * @date 2014-5-12 ä¸Šåˆ10:17:55
 	 * @param args void
 	 */
 	public static void main(String[] args) {
 		TransientStaticUse tu =new TransientStaticUse();
 		tu.setPwd("123");
-		tu.setUser("ÀîÀ×£¡");
-		tu.setGirlFriendName("º«Ã·Ã·£¡");
+		tu.setUser("æé›·ï¼");
+		tu.setGirlFriendName("éŸ©æ¢…æ¢…ï¼");
 		try {
 			ObjectOutputStream os = new ObjectOutputStream(new FileOutputStream("c:/transient.dat"));
 			os.writeObject(tu);
@@ -94,9 +93,9 @@ public class TransientStaticUse implements Serializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		/******************¶ÁÈ¡Íê³É***********************/
-		// ÔÚ·´ĞòÁĞ»¯Ö®Ç°¸Ä±ägirlµÄÖµ
-		TransientStaticUse.girlFriendName = "ÍõË¬";//×¢ÏúºÍ´æÔÚ¸ÃÌõ Ğ§¹ûÊÇ²»Í¬µÄ
+		/******************è¯»å–å®Œæˆ***********************/
+		// åœ¨ååºåˆ—åŒ–ä¹‹å‰æ”¹å˜girlçš„å€¼
+		TransientStaticUse.girlFriendName = "ç‹çˆ½";//æ³¨é”€å’Œå­˜åœ¨è¯¥æ¡ æ•ˆæœæ˜¯ä¸åŒçš„
 		try {
 			ObjectInputStream ois = new ObjectInputStream(new FileInputStream("c:/transient.dat"));
 			TransientStaticUse tur = (TransientStaticUse)ois.readObject();
@@ -115,7 +114,7 @@ public class TransientStaticUse implements Serializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 }

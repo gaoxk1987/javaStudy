@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ионГ11:20:51
+ * Createdate: 11:20:51
  * Version: 1.0
  *
  */
@@ -14,11 +14,11 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-4-8 ионГ11:20:51   
+ * @date 2014-4-8 11:20:51
  */
 
 public class SourceVo {
@@ -27,7 +27,7 @@ public class SourceVo {
 	private long min;
 	private Date publish;
 	private List<String> friend;
-	
+
 	public String getName() {
 		return name;
 	}
@@ -59,5 +59,5 @@ public class SourceVo {
 		this.friend = friend;
 	}
 
-	
+
 }

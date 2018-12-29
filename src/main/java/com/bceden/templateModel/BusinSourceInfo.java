@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
- * Project: hc-psit 
+ * Project: hc-psit
  * Author: Gao xingkun
- * Createdate: ÉÏÎç11:04:14
+ * Createdate: ä¸Šåˆ11:04:14
  * Version: 1.0
  *
  */
@@ -13,34 +12,34 @@ package com.bceden.templateModel;
 import java.util.Date;
 
 /**
- * ÊµÊ±¼ÆËã¼Ó·ÖÏîÔ­Ê¼Êı¾İ
+ * å®æ—¶è®¡ç®—åŠ åˆ†é¡¹åŸå§‹æ•°æ®
  * @project hc-psit
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-4-9 ÉÏÎç11:04:14   
+ * @date 2014-4-9 ä¸Šåˆ11:04:14
  */
 
 public class BusinSourceInfo {
-	
-	private String bcid;  //¹©Ó¦ĞÅÏ¢id,¶à¸öÓÃ'-'·Ö¸ô
-	private long userid; //ÉÌ¼Òid
-	private int oper; //²Ù×÷ÀàĞÍ£¬0ĞÂ·¢´ıÉó£¬1ĞÂ·¢ÃâÉó£¬2ĞŞ¸Ä´ıÉó£¬3ĞŞ¸ÄÃâÉó£¬4Î´¹ıÆÚÖØ·¢£¬5¹ıÆÚÖØ·¢£¬6×ª¹ıÆÚ£¬7É¾³ı£¬8ÉóºËÍ¨¹ı£¬9¾ÜÉó
-	private Date createTime; //·¢²¼Ê±¼ä
-	private String validate; //ÓĞĞ§Ê±¼ä
-	private String validates;//¶à¸öÓĞĞ§ÆÚ";"·Ö¸ô
-	private String title;//²úÆ·±êÌâ
-	private String keyword;//²úÆ·¹Ø¼ü×Ö
-	private int norParamNum;//ÒÑÌîĞ´·Ç±ØÌîÏîÊıÁ¿£¨ÒÑÌîĞ´µÄ·Ç±ØÌî²ÎÊı¸öÊı+×Ô¶¨Òå²ÎÊı+ÒÑÌîĞ´µÄ¹æ¸ñ²ÎÊı£©
-	private int nortParamNum;//·Ç±ØÌîÏî×ÜÊıÁ¿£¨ÏµÍ³Ô¤ÖÃµÄ×ÜµÄ·Ç±ØÌî²ÎÊı¸öÊı+¹æ¸ñ²ÎÊı£©
-	private int usrParamNum;//ÓÃ»§×Ô¶¨Òå²ÎÊıÊıÁ¿ (ÒÑÌîĞ´µÄ×Ô¶¨Òå²ÎÊı¸öÊı,¿ÉÒÔÌîĞ´µÄ×Ô¶¨Òå²ÎÊı×î¶à5¸ö)
-	private int imgNum;//Í¼Æ¬ÊıÁ¿
-	private int firstImageHeight;	 	 //µÚÒ»ÕÅÍ¼Æ¬¸ß¶È
-	private int firstImageWidth;  		 //µÚÒ»ÕÅÍ¼Æ¬¿í¶È
-	private long num;//¹©»õ×ÜÁ¿
-	private long minOrderNum;//×îĞ¡Æğ¶©Á¿
-	private String introduce;//²úÆ·¼ò½é
-	private int priceType;//±¨¼Û·½Ê½ 0£ºµç»°±¨¼Û 1£ºÖ±½Ó±¨¼Û(Çø¼ä¡¢¹æ¸ñ »ìºÏ)
-	
+
+	private String bcid;  //ä¾›åº”ä¿¡æ¯id,å¤šä¸ªç”¨'-'åˆ†éš”
+	private long userid; //å•†å®¶id
+	private int oper; //æ“ä½œç±»å‹ï¼Œ0æ–°å‘å¾…å®¡ï¼Œ1æ–°å‘å…å®¡ï¼Œ2ä¿®æ”¹å¾…å®¡ï¼Œ3ä¿®æ”¹å…å®¡ï¼Œ4æœªè¿‡æœŸé‡å‘ï¼Œ5è¿‡æœŸé‡å‘ï¼Œ6è½¬è¿‡æœŸï¼Œ7åˆ é™¤ï¼Œ8å®¡æ ¸é€šè¿‡ï¼Œ9æ‹’å®¡
+	private Date createTime; //å‘å¸ƒæ—¶é—´
+	private String validate; //æœ‰æ•ˆæ—¶é—´
+	private String validates;//å¤šä¸ªæœ‰æ•ˆæœŸ";"åˆ†éš”
+	private String title;//äº§å“æ ‡é¢˜
+	private String keyword;//äº§å“å…³é”®å­—
+	private int norParamNum;//å·²å¡«å†™éå¿…å¡«é¡¹æ•°é‡ï¼ˆå·²å¡«å†™çš„éå¿…å¡«å‚æ•°ä¸ªæ•°+è‡ªå®šä¹‰å‚æ•°+å·²å¡«å†™çš„è§„æ ¼å‚æ•°ï¼‰
+	private int nortParamNum;//éå¿…å¡«é¡¹æ€»æ•°é‡ï¼ˆç³»ç»Ÿé¢„ç½®çš„æ€»çš„éå¿…å¡«å‚æ•°ä¸ªæ•°+è§„æ ¼å‚æ•°ï¼‰
+	private int usrParamNum;//ç”¨æˆ·è‡ªå®šä¹‰å‚æ•°æ•°é‡ (å·²å¡«å†™çš„è‡ªå®šä¹‰å‚æ•°ä¸ªæ•°,å¯ä»¥å¡«å†™çš„è‡ªå®šä¹‰å‚æ•°æœ€å¤š5ä¸ª)
+	private int imgNum;//å›¾ç‰‡æ•°é‡
+	private int firstImageHeight;	 	 //ç¬¬ä¸€å¼ å›¾ç‰‡é«˜åº¦
+	private int firstImageWidth;  		 //ç¬¬ä¸€å¼ å›¾ç‰‡å®½åº¦
+	private long num;//ä¾›è´§æ€»é‡
+	private long minOrderNum;//æœ€å°èµ·è®¢é‡
+	private String introduce;//äº§å“ç®€ä»‹
+	private int priceType;//æŠ¥ä»·æ–¹å¼ 0ï¼šç”µè¯æŠ¥ä»· 1ï¼šç›´æ¥æŠ¥ä»·(åŒºé—´ã€è§„æ ¼ æ··åˆ)
+
 	public String getTitle() {
 		return title;
 	}
@@ -149,5 +148,5 @@ public class BusinSourceInfo {
 	public void setValidates(String validates) {
 		this.validates = validates;
 	}
-	
+
 }

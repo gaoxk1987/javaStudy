@@ -4,15 +4,15 @@ package com.selfActualization.pattern.builder.self;
 public class UserBuilderTest {
 
 	public static void main(String[] args) {
-		//¸ù±¾¾ÍÓÃ²»ÁË£»°¥
+		//æ ¹æœ¬å°±ç”¨ä¸äº†ï¼›å“
 		/**
-		 * 1.·½·¨È¨ÏŞ
-		 * 2.ÈçºÎ·µ»Ø¹¹½¨¶ÔÏó
-		 * 3.ÄÚ²¿ÀàĞ´·¨
-		 * 4.¹¹Ôìº¯ÊıÓÃ·¨
-		 * 
+		 * 1.æ–¹æ³•æƒé™
+		 * 2.å¦‚ä½•è¿”å›æ„å»ºå¯¹è±¡
+		 * 3.å†…éƒ¨ç±»å†™æ³•
+		 * 4.æ„é€ å‡½æ•°ç”¨æ³•
+		 *
 		 */
-//		User user = User.UserBuilder("Ğ¡Àî","1234")
+//		User user = User.UserBuilder("å°æ","1234")
 	}
 
 }

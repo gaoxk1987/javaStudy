@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç11:40:50
+ * Createdate: ä¸Šåˆ11:40:50
  * Version: 1.0
  *
  */
@@ -17,31 +16,31 @@ import com.bceden.pattern.Builder.service.ChinaStyleHouseBuilderImpl;
 import com.bceden.pattern.Builder.service.IHouseBuilder;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-8-27 ÉÏÎç11:40:50   
+ * @date 2014-8-27 ä¸Šåˆ11:40:50   
  */
 
 public class TestMain {
 
-	 public static void main(String [] args){
-	        IHouseBuilder cbuilder = new ChinaStyleHouseBuilderImpl();
-	        House chouse = new HouseDirector().buildHouse(cbuilder);
-	        System.out.println("------------------------------");
-	        System.out.println("·¿ÃÅÊôÐÔ£º" + chouse.getDoor());
-	        System.out.println("Ç½±ÚÊôÐÔ£º" + chouse.getWall());
-	        System.out.println("Ìì»¨°åÊôÐÔ£º" + chouse.getFloor());
-	        System.out.println("´°»§ÊôÐÔ£º" + chouse.getWindows());
-	        System.out.println("------------------------------");
-	        IHouseBuilder ebuilder = new BritishStyleHouseBuilderImpl();
-	        House ehouse = new HouseDirector().buildHouse(ebuilder);
-	        System.out.println("·¿ÃÅÊôÐÔ£º" + ehouse.getDoor());
-	        System.out.println("Ç½±ÚÊôÐÔ£º" + ehouse.getWall());
-	        System.out.println("Ìì»¨°åÊôÐÔ£º" + ehouse.getFloor());
-	        System.out.println("´°»§ÊôÐÔ£º" + ehouse.getWindows());
-	        System.out.println("------------------------------");
-	    }
+	public static void main(String [] args){
+		IHouseBuilder cbuilder = new ChinaStyleHouseBuilderImpl();
+		House chouse = new HouseDirector().buildHouse(cbuilder);
+		System.out.println("------------------------------");
+		System.out.println("æˆ¿é—¨å±žæ€§ï¼š" + chouse.getDoor());
+		System.out.println("å¢™å£å±žæ€§ï¼š" + chouse.getWall());
+		System.out.println("å¤©èŠ±æ¿å±žæ€§ï¼š" + chouse.getFloor());
+		System.out.println("çª—æˆ·å±žæ€§ï¼š" + chouse.getWindows());
+		System.out.println("------------------------------");
+		IHouseBuilder ebuilder = new BritishStyleHouseBuilderImpl();
+		House ehouse = new HouseDirector().buildHouse(ebuilder);
+		System.out.println("æˆ¿é—¨å±žæ€§ï¼š" + ehouse.getDoor());
+		System.out.println("å¢™å£å±žæ€§ï¼š" + ehouse.getWall());
+		System.out.println("å¤©èŠ±æ¿å±žæ€§ï¼š" + ehouse.getFloor());
+		System.out.println("çª—æˆ·å±žæ€§ï¼š" + ehouse.getWindows());
+		System.out.println("------------------------------");
+	}
 
 }

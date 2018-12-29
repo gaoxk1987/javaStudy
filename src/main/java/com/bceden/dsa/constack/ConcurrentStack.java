@@ -19,7 +19,7 @@ public class ConcurrentStack<E> {
 
 	public E pop() {
 		Node<E> oldHead;
-		Node<E> newHead;   //此处代码可优化：Node<E> newHead,oldHead;
+		Node<E> newHead;   //舜呕Node<E> newHead,oldHead;
 		do {
 			oldHead = top.get();
 			if (oldHead == null) {

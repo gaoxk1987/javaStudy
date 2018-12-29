@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÉÏÎç10:48:04
+ * Createdate: ä¸Šåˆ10:48:04
  * Version: 1.0
  *
  */
@@ -17,20 +16,20 @@ import com.bceden.reflection.factory.DefaultObjectFactory;
 import com.bceden.reflection.factory.ObjectFactory;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-23 ÉÏÎç10:48:04   
+ * @date 2014-6-23 ä¸Šåˆ10:48:04   
  */
 
 public class CreateObjectTest {
 
 	/**
-	 * Ä¬ÈÏ¹¹Ôìº¯Êı´´½¨¶ÔÏó
+	 * é»˜è®¤æ„é€ å‡½æ•°åˆ›å»ºå¯¹è±¡
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-6-23 ÉÏÎç10:48:04
+	 * @date 2014-6-23 ä¸Šåˆ10:48:04
 	 * @param args void
 	 */
 	public static void main(String[] args) {
@@ -40,23 +39,23 @@ public class CreateObjectTest {
 		collectionTest();
 	}
 
-	
-	 
+
+
 	/**
-	 *   ²âÊÔ·´ÉäÉú³É¼¯ºÏ¿ò¼Ü£¬Èç¹ûÄÚ²¿²»ÅĞ¶ÏÀàĞÍµÄ»°
-	 *   Èç¹ûÃ»ÓĞÅĞ¶ÏµÄ»°»á±¨£º
-	 *   java.lang.NoSuchMethodException: java.util.List.<init>()Òì³£
-	 *   ÒòÎª¶¼ÊÇ½Ó¿Ú
+	 *   æµ‹è¯•åå°„ç”Ÿæˆé›†åˆæ¡†æ¶ï¼Œå¦‚æœå†…éƒ¨ä¸åˆ¤æ–­ç±»å‹çš„è¯
+	 *   å¦‚æœæ²¡æœ‰åˆ¤æ–­çš„è¯ä¼šæŠ¥ï¼š
+	 *   java.lang.NoSuchMethodException: java.util.List.<init>()å¼‚å¸¸
+	 *   å› ä¸ºéƒ½æ˜¯æ¥å£
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-6-23 ÉÏÎç11:38:54 void
+	 * @date 2014-6-23 ä¸Šåˆ11:38:54 void
 	 */
 	public static void collectionTest(){
 		ObjectFactory dof = new DefaultObjectFactory();
 //		List list= (List)dof.createObject(List.class);
 //		System.out.println(list!=null);
-		
+
 		List list= (List)dof.createObject(ArrayList.class);
 		System.out.println(list!=null);
-	 }
+	}
 }

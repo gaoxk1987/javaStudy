@@ -2,7 +2,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç5:15:50
+ * Createdate: ä¸‹åˆ5:15:50
  * Version: 1.0
  *
  */
@@ -14,11 +14,11 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-26 ÏÂÎç5:15:50
+ * @date 2014-6-26 ä¸‹åˆ5:15:50
  */
 
 public class ScheduledExecutorTest implements Runnable {
@@ -40,13 +40,13 @@ public class ScheduledExecutorTest implements Runnable {
 
 		long initialDelay1 = 1;
 		long period1 = 1;
-		// ´ÓÏÖÔÚ¿ªÊ¼1ÃëÖÓÖ®ºó£¬Ã¿¸ô1ÃëÖÓÖ´ĞĞÒ»´Îjob1
+		// ä»ç°åœ¨å¼€å§‹1ç§’é’Ÿä¹‹åï¼Œæ¯éš”1ç§’é’Ÿæ‰§è¡Œä¸€æ¬¡job1
 		service.scheduleAtFixedRate(new ScheduledExecutorTest("job1"),
 				initialDelay1, period1, TimeUnit.SECONDS);
 
 		long initialDelay2 = 2;
 		long delay2 = 2;
-		// ´ÓÏÖÔÚ¿ªÊ¼2ÃëÖÓÖ®ºó£¬Ã¿¸ô2ÃëÖÓÖ´ĞĞÒ»´Îjob2
+		// ä»ç°åœ¨å¼€å§‹2ç§’é’Ÿä¹‹åï¼Œæ¯éš”2ç§’é’Ÿæ‰§è¡Œä¸€æ¬¡job2
 		service.scheduleWithFixedDelay(new ScheduledExecutorTest("job2"),
 				initialDelay2, delay2, TimeUnit.SECONDS);
 	}

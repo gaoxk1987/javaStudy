@@ -1,27 +1,27 @@
 package com.bceden.templateModel;
 
 /**
- * ÉÌ»úÖÊÁ¿·ÖÊı
+ * å•†æœºè´¨é‡åˆ†æ•°
  * @author Gxk
  *
  */
 public class BusinScore{
 
-	private long bcid; //ÉÌ»úid
-	private long userid; //ÓÃ»§id
-	private double score; //·ÖÊı
-	private int state;   //ÉÌ»ú×´Ì¬0´ıÉó£¬1É¾³ı£¬2¾ÜÉó£¬3ÉóºËÍ¨¹ı£¬4¹ıÆÚ
-	private int star; //ĞÇ¼¶
-	private double hasphoto;//ÊÇ·ñÓĞÍ¼Æ¬·ÖÊı
-	private double firstphoto;//µÚÒ»ÕÅÍ¼Æ¬·ÖÊı
-	private double haslongtitle;//±êÌâ·ÖÊı
-	private double haslongintroduce;//ËµÃ÷·ÖÊı
-	private double photocount;//Í¼Æ¬ÊıÁ¿·ÖÊı
-	private double hasnoparam;//·Ç±ØÌîÏî·ÖÊı
-	private double hasnum;//¹©Ó¦×ÜÁ¿·ÖÊı
-	private double userparam;//ÓÃ»§×Ô¶¨Òå·ÖÊı
-	private double hasprice;//²úÆ·±¨¼Û·½Ê½µÃ·Ö
-	private double hasMinNum;//×îĞ¡Æğ¶©Á¿µÃ·Ö
+	private long bcid; //å•†æœºid
+	private long userid; //ç”¨æˆ·id
+	private double score; //åˆ†æ•°
+	private int state;   //å•†æœºçŠ¶æ€0å¾…å®¡ï¼Œ1åˆ é™¤ï¼Œ2æ‹’å®¡ï¼Œ3å®¡æ ¸é€šè¿‡ï¼Œ4è¿‡æœŸ
+	private int star; //æ˜Ÿçº§
+	private double hasphoto;//æ˜¯å¦æœ‰å›¾ç‰‡åˆ†æ•°
+	private double firstphoto;//ç¬¬ä¸€å¼ å›¾ç‰‡åˆ†æ•°
+	private double haslongtitle;//æ ‡é¢˜åˆ†æ•°
+	private double haslongintroduce;//è¯´æ˜åˆ†æ•°
+	private double photocount;//å›¾ç‰‡æ•°é‡åˆ†æ•°
+	private double hasnoparam;//éå¿…å¡«é¡¹åˆ†æ•°
+	private double hasnum;//ä¾›åº”æ€»é‡åˆ†æ•°
+	private double userparam;//ç”¨æˆ·è‡ªå®šä¹‰åˆ†æ•°
+	private double hasprice;//äº§å“æŠ¥ä»·æ–¹å¼å¾—åˆ†
+	private double hasMinNum;//æœ€å°èµ·è®¢é‡å¾—åˆ†
 
 	public double getHasprice() {
 		return hasprice;
@@ -113,5 +113,5 @@ public class BusinScore{
 	public void setHasMinNum(double hasMinNum) {
 		this.hasMinNum = hasMinNum;
 	}
-	
+
 }

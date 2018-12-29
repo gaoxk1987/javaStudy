@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç2:07:24
+ * Createdate: ä¸‹åˆ2:07:24
  * Version: 1.0
  *
  */
@@ -15,29 +14,29 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-4-23 ÏÂÎç2:07:24   
+ * @date 2014-4-23 ä¸‹åˆ2:07:24   
  */
 
 public class LinkedHashMapTest {
 
 	/**
-	 * 
+	 *
 	 * @author Gao xingkun
 	 * @version 1.0
-	 * @date 2014-4-23 ÏÂÎç2:07:24
+	 * @date 2014-4-23 ä¸‹åˆ2:07:24
 	 * @param args void
 	 */
 
 	public static void main(String[] args) {
 		/**
-		 * nitialCapacity   ³õÊ¼ÈİÁ¿
- 		 * loadFactor    ¼ÓÔØÒò×Ó£¬Ò»°ãÊÇ 0.75f
-		 * accessOrder   false »ùÓÚ²åÈëË³Ğò  true  »ùÓÚ·ÃÎÊË³Ğò£¨getÒ»¸öÔªËØºó£¬Õâ¸öÔªËØ±»¼Óµ½×îºó£¬Ê¹ÓÃÁËLRU  ×î½ü×îÉÙ±»Ê¹ÓÃµÄµ÷¶ÈËã·¨£©
-		 * 
+		 * nitialCapacity   åˆå§‹å®¹é‡
+		 * loadFactor    åŠ è½½å› å­ï¼Œä¸€èˆ¬æ˜¯ 0.75f
+		 * accessOrder   false åŸºäºæ’å…¥é¡ºåº  true  åŸºäºè®¿é—®é¡ºåºï¼ˆgetä¸€ä¸ªå…ƒç´ åï¼Œè¿™ä¸ªå…ƒç´ è¢«åŠ åˆ°æœ€åï¼Œä½¿ç”¨äº†LRU  æœ€è¿‘æœ€å°‘è¢«ä½¿ç”¨çš„è°ƒåº¦ç®—æ³•ï¼‰
+		 *
 		 */
 //		LinkedHashMap<Integer,String> lhMap = new LinkedHashMap<Integer,String>();
 //		lhMap.put(1, "1");
@@ -60,35 +59,35 @@ public class LinkedHashMapTest {
 //		lhMap2.put(3, "3");
 //		lhMap2.put(4, "4");
 //		lhMap2.put(5, "5");
-		
+
 //		String value = lhMap2.get(4);
-//		System.out.println("»ñÈ¡Öµ"+value);
-		
+//		System.out.println("è·å–å€¼"+value);
+
 //		for(Iterator<Integer> it2 =lhMap2.keySet().iterator();it2.hasNext();){
 //			int curIndext =(Integer)it2.next();
 //			System.out.println(lhMap2.get(curIndext));
 //		}
-		
+
 		try {
 			testTrueMap();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void testTrueMap() throws Exception {
-		   Map<Integer,Integer> map=new LinkedHashMap<Integer,Integer>(10,0.75f,true);  
-	        map.put(9,3);  
-	        map.put(7,4);  
-	        map.put(5,9);  
-	        map.put(3,4);  
-	        //ÏÖÔÚ±éÀúµÄ»°Ë³Ğò¿Ï¶¨ÊÇ9,7,5,3  
-	        //ÏÂÃæ·ÃÎÊÁËÒ»ÏÂ9,3Õâ¸ö¼üÖµ¶Ô£¬Êä³öË³Ğò¾Í±äà¶~  
-	        map.get(9);  
-	        for(Iterator<Map.Entry<Integer,Integer>> it=map.entrySet().iterator();it.hasNext();){  
-	            System.out.println(it.next().getKey());  
-	        }  
-		
+		Map<Integer,Integer> map=new LinkedHashMap<Integer,Integer>(10,0.75f,true);
+		map.put(9,3);
+		map.put(7,4);
+		map.put(5,9);
+		map.put(3,4);
+		//ç°åœ¨éå†çš„è¯é¡ºåºè‚¯å®šæ˜¯9,7,5,3
+		//ä¸‹é¢è®¿é—®äº†ä¸€ä¸‹9,3è¿™ä¸ªé”®å€¼å¯¹ï¼Œè¾“å‡ºé¡ºåºå°±å˜å–½~
+		map.get(9);
+		for(Iterator<Map.Entry<Integer,Integer>> it=map.entrySet().iterator();it.hasNext();){
+			System.out.println(it.next().getKey());
+		}
+
 	}
 
 }

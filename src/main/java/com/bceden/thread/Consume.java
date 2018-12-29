@@ -4,33 +4,33 @@ import java.util.List;
 
 public class Consume implements Runnable {
 
-	private List container = null;
-	private int count;
+    private List container = null;
+    private int count;
 
-	public Consume(List lst) {
-		this.container = lst;
-	}
+    public Consume(List lst) {
+        this.container = lst;
+    }
 
-	public void run() {
-		while (true) {
-			synchronized (container) {
-				if (container.size() == 0) {
-					try {
-						container.wait();// ÈİÆ÷Îª¿Õ£¬·ÅÆúËø£¬µÈ´ıÉú²ú
-					} catch (InterruptedException e) {
-						e.printStackTrace();
-					}
-				}
-				try {
-					Thread.sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-				container.remove(0);
-				container.notify();
-				System.out.println("ÎÒ³ÔÁË" + (++count) + "¸ö");
-			}
-		}
-	}
+    public void run() {
+        while (true) {
+            synchronized (container) {
+                if (container.size() == 0) {
+                    try {
+                        container.wait();// å®¹å™¨ä¸ºç©ºï¼Œæ”¾å¼ƒé”ï¼Œç­‰å¾…ç”Ÿäº§
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                container.remove(0);
+                container.notify();
+                System.out.println("æˆ‘åƒäº†" + (++count) + "ä¸ª");
+            }
+        }
+    }
 
 }

@@ -2,7 +2,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç5:09:06
+ * Createdate: ä¸‹åˆ5:09:06
  * Version: 1.0
  *
  */
@@ -13,37 +13,37 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-26 ÏÂÎç5:09:06
+ * @date 2014-6-26 ä¸‹åˆ5:09:06
  */
 
 public class TimerTest extends TimerTask {
 
-	private String jobName = "";
+    private String jobName = "";
 
-	public TimerTest(String jobName) {
-		super();
-		this.jobName = jobName;
-	}
+    public TimerTest(String jobName) {
+        super();
+        this.jobName = jobName;
+    }
 
-	@Override
-	public void run() {
-		System.out.println("execute " + jobName);
-	}
+    @Override
+    public void run() {
+        System.out.println("execute " + jobName);
+    }
 
-	public static void main(String[] args) {
-		Timer timer = new Timer();
-		long delay1 = 1 * 1000;
-		long period1 = 1000;
-		// ´ÓÏÖÔÚ¿ªÊ¼ 1 ÃëÖÓÖ®ºó£¬Ã¿¸ô 1 ÃëÖÓÖ´ĞĞÒ»´Î job1
-		timer.schedule(new TimerTest("job1"), delay1, period1);
-		long delay2 = 2 * 1000;
-		long period2 = 2000;
-		// ´ÓÏÖÔÚ¿ªÊ¼ 2 ÃëÖÓÖ®ºó£¬Ã¿¸ô 2 ÃëÖÓÖ´ĞĞÒ»´Î job2
-		timer.schedule(new TimerTest("job2"), delay2, period2);
-	}
+    public static void main(String[] args) {
+        Timer timer = new Timer();
+        long delay1 = 1 * 1000;
+        long period1 = 1000;
+        // ä»ç°åœ¨å¼€å§‹ 1 ç§’é’Ÿä¹‹åï¼Œæ¯éš” 1 ç§’é’Ÿæ‰§è¡Œä¸€æ¬¡ job1
+        timer.schedule(new TimerTest("job1"), delay1, period1);
+        long delay2 = 2 * 1000;
+        long period2 = 2000;
+        // ä»ç°åœ¨å¼€å§‹ 2 ç§’é’Ÿä¹‹åï¼Œæ¯éš” 2 ç§’é’Ÿæ‰§è¡Œä¸€æ¬¡ job2
+        timer.schedule(new TimerTest("job2"), delay2, period2);
+    }
 
 }

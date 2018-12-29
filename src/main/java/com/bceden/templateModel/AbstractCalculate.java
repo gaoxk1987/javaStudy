@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: hc-bcs 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç4:40:39
+ * Createdate: ä¸‹åˆ4:40:39
  * Version: 1.0
  *
  */
@@ -12,141 +11,141 @@ package com.bceden.templateModel;
 
 
 /**
- * Ä£°æÉè¼ÆÄ£Ê½´¦ÀíËã·ÖÔ­Ê¼Êı¾İ
+ * æ¨¡ç‰ˆè®¾è®¡æ¨¡å¼å¤„ç†ç®—åˆ†åŸå§‹æ•°æ®
  * @project hc-bcs
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-5-12 ÏÂÎç4:40:39   
+ * @date 2014-5-12 ä¸‹åˆ4:40:39   
  */
 
 public abstract class AbstractCalculate {
-    protected AbstractCalculate() {
-    }
-	 public final BusinScore calculateScore(BusinInfo businInfo) {
-		 	BusinScore businScore = new BusinScore();
-		 	double totalScore = 0.0;
-		 	//´¦ÀíÉÌ»ú»ù±¾ĞÅÏ¢
-		 	totalScore+=caluteTitle(businInfo,businScore );
-		 	//´¦Àí±êÌâ
-		 	totalScore+=caluteNoRequiredParam(businInfo,businScore );
-	        //·Ç±ØÌî²ÎÊı
-		 	totalScore+=caluteImage(businInfo,businScore );
-	       //´¦ÀíÍ¼Æ¬ĞÅÏ¢£¨ÓĞÎŞºÍÊıÁ¿£©
-		 	totalScore+=caluteDetail(businInfo,businScore );
-	       //´¦ÀíµÚÒ»ÕÅÍ¼Æ¬ĞÅÏ¢£¨³ß´ç£©
-		 	totalScore+=caluteNum(businInfo,businScore );
-	        //¹©Ó¦Á¿ 
-		 	totalScore+=calutePriceType(businInfo,businScore );
-	        //´¦ÀíÏêÏ¸ĞÅÏ¢×ÖÊı
-		 	totalScore+=caluteMinOrderNum(businInfo,businScore);	      
-	        
-			businScore.setScore(totalScore);
-			/**************************¼ÆËãĞÇ¼¶*************************/
-			businScore.setStar(getStar(totalScore,businInfo));
-			businScore.setUserid(businInfo.getUserid());
-		 	
-	        return businScore;
-	    }
-	 
-	 abstract double caluteTitle (BusinInfo businInfo,BusinScore businScore );
-	 abstract double caluteNoRequiredParam (BusinInfo businInfo,BusinScore businScore );
-	 abstract double caluteImage (BusinInfo businInfo,BusinScore businScore );
-	 abstract double caluteDetail (BusinInfo businInfo,BusinScore businScore );
-	 abstract double caluteNum (BusinInfo businInfo,BusinScore businScore );
-	 abstract double calutePriceType (BusinInfo businInfo,BusinScore businScore );
-	 abstract double caluteMinOrderNum (BusinInfo businInfo,BusinScore businScore );
-	 
-	 /**
-		 * ¼ÆËãĞÇ¼¶
-		 * @param score
-		 * @return
-		 */
-		public final int getStar(double score,BusinInfo businInfo ){
-			int star =0;
-			if(score<240){
-				star = 1;
-			}else if(score<360){
-				star = 2;
-			}else if(score<440){
-				if(businInfo.isPriceType()){//Èç¹ûÊÇÖ±½Ó±¨¼ÛÔòÈıĞÇ
-					star = 3;
-				}else{
-					star = 2;
-				}
-			}else if(score<520){
-				if(businInfo.getHasImage()&&businInfo.getFirstImageType()==2&&businInfo.isPriceType()){//ÓĞÍ¼ Í¼Æ¬¿í¸ß×îĞ¡³ß´ç>=500 ÓĞ¼Û¸ñ
-					star = 4;
-				}else if(businInfo.getHasImage()&&businInfo.getFirstImageType()!=2&&businInfo.isPriceType()){//ÓĞÍ¼ Í¼Æ¬¿í¸ß×îĞ¡³ß´ç<500 ÓĞ¼Û¸ñ
-					star = 3;
-				}else{
-					star = 2;
-				}
+	protected AbstractCalculate() {
+	}
+	public final BusinScore calculateScore(BusinInfo businInfo) {
+		BusinScore businScore = new BusinScore();
+		double totalScore = 0.0;
+		//å¤„ç†å•†æœºåŸºæœ¬ä¿¡æ¯
+		totalScore+=caluteTitle(businInfo,businScore );
+		//å¤„ç†æ ‡é¢˜
+		totalScore+=caluteNoRequiredParam(businInfo,businScore );
+		//éå¿…å¡«å‚æ•°
+		totalScore+=caluteImage(businInfo,businScore );
+		//å¤„ç†å›¾ç‰‡ä¿¡æ¯ï¼ˆæœ‰æ— å’Œæ•°é‡ï¼‰
+		totalScore+=caluteDetail(businInfo,businScore );
+		//å¤„ç†ç¬¬ä¸€å¼ å›¾ç‰‡ä¿¡æ¯ï¼ˆå°ºå¯¸ï¼‰
+		totalScore+=caluteNum(businInfo,businScore );
+		//ä¾›åº”é‡
+		totalScore+=calutePriceType(businInfo,businScore );
+		//å¤„ç†è¯¦ç»†ä¿¡æ¯å­—æ•°
+		totalScore+=caluteMinOrderNum(businInfo,businScore);
+
+		businScore.setScore(totalScore);
+		/**************************è®¡ç®—æ˜Ÿçº§*************************/
+		businScore.setStar(getStar(totalScore,businInfo));
+		businScore.setUserid(businInfo.getUserid());
+
+		return businScore;
+	}
+
+	abstract double caluteTitle (BusinInfo businInfo,BusinScore businScore );
+	abstract double caluteNoRequiredParam (BusinInfo businInfo,BusinScore businScore );
+	abstract double caluteImage (BusinInfo businInfo,BusinScore businScore );
+	abstract double caluteDetail (BusinInfo businInfo,BusinScore businScore );
+	abstract double caluteNum (BusinInfo businInfo,BusinScore businScore );
+	abstract double calutePriceType (BusinInfo businInfo,BusinScore businScore );
+	abstract double caluteMinOrderNum (BusinInfo businInfo,BusinScore businScore );
+
+	/**
+	 * è®¡ç®—æ˜Ÿçº§
+	 * @param score
+	 * @return
+	 */
+	public final int getStar(double score,BusinInfo businInfo ){
+		int star =0;
+		if(score<240){
+			star = 1;
+		}else if(score<360){
+			star = 2;
+		}else if(score<440){
+			if(businInfo.isPriceType()){//å¦‚æœæ˜¯ç›´æ¥æŠ¥ä»·åˆ™ä¸‰æ˜Ÿ
+				star = 3;
 			}else{
-				if(businInfo.getHasImage()&&businInfo.getFirstImageType()==2&&businInfo.isPriceType()){//ÓĞÍ¼ Í¼Æ¬¿í¸ß×îĞ¡³ß´ç>=500 ÓĞ¼Û¸ñ
-					star = 5;
-				}else if(businInfo.getHasImage()&&businInfo.getFirstImageType()!=2&&businInfo.isPriceType()){//ÓĞÍ¼ Í¼Æ¬¿í¸ß×îĞ¡³ß´ç<500 ÓĞ¼Û¸ñ
-					star = 3;
-				}else{
-					star = 2;
-				}
+				star = 2;
 			}
-			return star;
+		}else if(score<520){
+			if(businInfo.getHasImage()&&businInfo.getFirstImageType()==2&&businInfo.isPriceType()){//æœ‰å›¾ å›¾ç‰‡å®½é«˜æœ€å°å°ºå¯¸>=500 æœ‰ä»·æ ¼
+				star = 4;
+			}else if(businInfo.getHasImage()&&businInfo.getFirstImageType()!=2&&businInfo.isPriceType()){//æœ‰å›¾ å›¾ç‰‡å®½é«˜æœ€å°å°ºå¯¸<500 æœ‰ä»·æ ¼
+				star = 3;
+			}else{
+				star = 2;
+			}
+		}else{
+			if(businInfo.getHasImage()&&businInfo.getFirstImageType()==2&&businInfo.isPriceType()){//æœ‰å›¾ å›¾ç‰‡å®½é«˜æœ€å°å°ºå¯¸>=500 æœ‰ä»·æ ¼
+				star = 5;
+			}else if(businInfo.getHasImage()&&businInfo.getFirstImageType()!=2&&businInfo.isPriceType()){//æœ‰å›¾ å›¾ç‰‡å®½é«˜æœ€å°å°ºå¯¸<500 æœ‰ä»·æ ¼
+				star = 3;
+			}else{
+				star = 2;
+			}
 		}
-	 
-	 abstract class calculateSource{
-		    protected calculateSource() {
-		    }
-		 public final BusinInfo calculateSource(BusinSourceInfo businSourceInfo) {
-			 	BusinInfo bisinInfo = new BusinInfo();
-			 	//´¦ÀíÉÌ»ú»ù±¾ĞÅÏ¢
-			 	doBusinBasic(businSourceInfo,bisinInfo);
-			 	//´¦Àí±êÌâ
-		        doTitleSource(bisinInfo,businSourceInfo.getTitle(),businSourceInfo.getKeyword());
-		        //·Ç±ØÌî²ÎÊı
-		        doNoRPSource(businSourceInfo,bisinInfo);
-		       //´¦ÀíÍ¼Æ¬ĞÅÏ¢£¨ÓĞÎŞºÍÊıÁ¿£©
-		        doImgInfo(businSourceInfo,bisinInfo);
-		       //´¦ÀíµÚÒ»ÕÅÍ¼Æ¬ĞÅÏ¢£¨³ß´ç£©
-		        doFirstImgInfo(businSourceInfo,bisinInfo);
-		        //¹©Ó¦Á¿ 
-		        doHasNum(businSourceInfo,bisinInfo);
-		        //´¦ÀíÏêÏ¸ĞÅÏ¢×ÖÊı
-		        doIntroduceSource(businSourceInfo,bisinInfo);
-		        //´¦ÀíÏêÏ¸ĞÅÏ¢Í¼Æ¬
-		        doIntroduceImgSource(businSourceInfo,bisinInfo);
-		        //±¨¼ÛÀàĞÍ
-		        doPriceType(businSourceInfo,bisinInfo);
-		        //×îĞ¡Æğ¶©Á¿
-		        doHasMinOrderNum(businSourceInfo,bisinInfo);
-		        
-		        return bisinInfo;
-		    }
-		 
+		return star;
+	}
+
+	abstract class calculateSource{
+		protected calculateSource() {
+		}
+		public final BusinInfo calculateSource(BusinSourceInfo businSourceInfo) {
+			BusinInfo bisinInfo = new BusinInfo();
+			//å¤„ç†å•†æœºåŸºæœ¬ä¿¡æ¯
+			doBusinBasic(businSourceInfo,bisinInfo);
+			//å¤„ç†æ ‡é¢˜
+			doTitleSource(bisinInfo,businSourceInfo.getTitle(),businSourceInfo.getKeyword());
+			//éå¿…å¡«å‚æ•°
+			doNoRPSource(businSourceInfo,bisinInfo);
+			//å¤„ç†å›¾ç‰‡ä¿¡æ¯ï¼ˆæœ‰æ— å’Œæ•°é‡ï¼‰
+			doImgInfo(businSourceInfo,bisinInfo);
+			//å¤„ç†ç¬¬ä¸€å¼ å›¾ç‰‡ä¿¡æ¯ï¼ˆå°ºå¯¸ï¼‰
+			doFirstImgInfo(businSourceInfo,bisinInfo);
+			//ä¾›åº”é‡
+			doHasNum(businSourceInfo,bisinInfo);
+			//å¤„ç†è¯¦ç»†ä¿¡æ¯å­—æ•°
+			doIntroduceSource(businSourceInfo,bisinInfo);
+			//å¤„ç†è¯¦ç»†ä¿¡æ¯å›¾ç‰‡
+			doIntroduceImgSource(businSourceInfo,bisinInfo);
+			//æŠ¥ä»·ç±»å‹
+			doPriceType(businSourceInfo,bisinInfo);
+			//æœ€å°èµ·è®¢é‡
+			doHasMinOrderNum(businSourceInfo,bisinInfo);
+
+			return bisinInfo;
+		}
+
 		/**
-		 * ´¦Àí»ù´¡ĞÅÏ¢
+		 * å¤„ç†åŸºç¡€ä¿¡æ¯
 		 * @author Gao xingkun
 		 * @version 1.0
-		 * @date 2014-5-12 ÏÂÎç7:52:37
+		 * @date 2014-5-12 ä¸‹åˆ7:52:37
 		 * @param businSourceInfo
 		 * @param businInfo void
 		 */
 		public void doBusinBasic(BusinSourceInfo businSourceInfo,BusinInfo businInfo){
-			 businInfo.setBcid(businSourceInfo.getBcid());
-			 businInfo.setUserid(businSourceInfo.getUserid());
-			 businInfo.setCreateTime(businSourceInfo.getCreateTime());
-			 businInfo.setOper(businSourceInfo.getOper());
-			 businInfo.setValidate(businSourceInfo.getValidate());
-			 businInfo.setValidates(businSourceInfo.getValidates());
-		 }
-		 
-		 abstract void doTitleSource (BusinInfo bisinInfo,String businTitle,String businKeyword);
-		 abstract void doNoRPSource (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-		 abstract void doImgInfo (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-		 abstract void doFirstImgInfo (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-		 abstract void doHasNum (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-		 abstract void doIntroduceSource (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-		 abstract void doIntroduceImgSource (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-		 abstract void doPriceType (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-		 abstract void doHasMinOrderNum (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
-	 }
+			businInfo.setBcid(businSourceInfo.getBcid());
+			businInfo.setUserid(businSourceInfo.getUserid());
+			businInfo.setCreateTime(businSourceInfo.getCreateTime());
+			businInfo.setOper(businSourceInfo.getOper());
+			businInfo.setValidate(businSourceInfo.getValidate());
+			businInfo.setValidates(businSourceInfo.getValidates());
+		}
+
+		abstract void doTitleSource (BusinInfo bisinInfo,String businTitle,String businKeyword);
+		abstract void doNoRPSource (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+		abstract void doImgInfo (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+		abstract void doFirstImgInfo (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+		abstract void doHasNum (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+		abstract void doIntroduceSource (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+		abstract void doIntroduceImgSource (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+		abstract void doPriceType (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+		abstract void doHasMinOrderNum (BusinSourceInfo businSourceInfo,BusinInfo bisinInfo);
+	}
 }

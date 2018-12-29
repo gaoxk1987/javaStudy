@@ -1,9 +1,8 @@
-
 /**
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç3:16:11
+ * Createdate: ä¸‹åˆ3:16:11
  * Version: 1.0
  *
  */
@@ -15,51 +14,51 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-4-23 ÏÂÎç3:16:11   
+ * @date 2014-4-23 ä¸‹åˆ3:16:11   
  */
-//²âÊÔÀà  
-public class LRULinkedHashMapTest{  
-	public static void main(String[] args) throws Exception{  
-	  
-	    //Ö¸¶¨»º´æ×î´óÈİÁ¿Îª4  
-	    Map<Integer,Integer> map=new LRULinkedHashMap<Integer,Integer>(4);  
-	    map.put(9,3);  
-	    map.put(7,4);  
-	    map.put(5,9);  
-	    map.put(3,4);  
-	    
-//	    map.get(9);   //×¢ÏúºÍ²»×¢ÏúÊÇ²»Í¬µÄ
-	    
-	    map.put(6,6);  
-	    //×Ü¹²putÁË5¸öÔªËØ£¬³¬¹ıÁËÖ¸¶¨µÄ»º´æ×î´óÈİÁ¿  
-	    //±éÀú½á¹û  
-	        for(Iterator<Map.Entry<Integer,Integer>> it=map.entrySet().iterator();it.hasNext();){  
-	            System.out.println(it.next().getKey());  
-	        }  
-	    }  
-}  
+//æµ‹è¯•ç±»  
+public class LRULinkedHashMapTest{
+    public static void main(String[] args) throws Exception{
+
+        //æŒ‡å®šç¼“å­˜æœ€å¤§å®¹é‡ä¸º4
+        Map<Integer,Integer> map=new LRULinkedHashMap<Integer,Integer>(4);
+        map.put(9,3);
+        map.put(7,4);
+        map.put(5,9);
+        map.put(3,4);
+
+//	    map.get(9);   //æ³¨é”€å’Œä¸æ³¨é”€æ˜¯ä¸åŒçš„
+
+        map.put(6,6);
+        //æ€»å…±putäº†5ä¸ªå…ƒç´ ï¼Œè¶…è¿‡äº†æŒ‡å®šçš„ç¼“å­˜æœ€å¤§å®¹é‡
+        //éå†ç»“æœ
+        for(Iterator<Map.Entry<Integer,Integer>> it=map.entrySet().iterator();it.hasNext();){
+            System.out.println(it.next().getKey());
+        }
+    }
+}
 
 
-//À©Õ¹Ò»ÏÂLinkedHashMapÕâ¸öÀà£¬ÈÃËûÊµÏÖLRUËã·¨  
-class LRULinkedHashMap<K,V> extends LinkedHashMap<K,V>{  
-   //¶¨Òå»º´æµÄÈİÁ¿  
-   private int capacity;  
-   private static final long serialVersionUID = 1L;  
-   //´ø²ÎÊıµÄ¹¹ÔìÆ÷     
-   LRULinkedHashMap(int capacity){  
-       //µ÷ÓÃLinkedHashMapµÄ¹¹ÔìÆ÷£¬´«ÈëÒÔÏÂ²ÎÊı  
-       super(16,0.75f,true);  
-       //´«ÈëÖ¸¶¨µÄ»º´æ×î´óÈİÁ¿  
-       this.capacity=capacity;  
-   }  
-   //ÊµÏÖLRUµÄ¹Ø¼ü·½·¨£¬Èç¹ûmapÀïÃæµÄÔªËØ¸öÊı´óÓÚÁË»º´æ×î´óÈİÁ¿£¬ÔòÉ¾³ıÁ´±íµÄ¶¥¶ËÔªËØ  
-   @Override  
-   public boolean removeEldestEntry(Map.Entry<K, V> eldest){   
-       System.out.println(eldest.getKey() + "=" + eldest.getValue());    
-       return size()>capacity;  
-   }    
+//æ‰©å±•ä¸€ä¸‹LinkedHashMapè¿™ä¸ªç±»ï¼Œè®©ä»–å®ç°LRUç®—æ³•  
+class LRULinkedHashMap<K,V> extends LinkedHashMap<K,V>{
+    //å®šä¹‰ç¼“å­˜çš„å®¹é‡
+    private int capacity;
+    private static final long serialVersionUID = 1L;
+    //å¸¦å‚æ•°çš„æ„é€ å™¨
+    LRULinkedHashMap(int capacity){
+        //è°ƒç”¨LinkedHashMapçš„æ„é€ å™¨ï¼Œä¼ å…¥ä»¥ä¸‹å‚æ•°
+        super(16,0.75f,true);
+        //ä¼ å…¥æŒ‡å®šçš„ç¼“å­˜æœ€å¤§å®¹é‡
+        this.capacity=capacity;
+    }
+    //å®ç°LRUçš„å…³é”®æ–¹æ³•ï¼Œå¦‚æœmapé‡Œé¢çš„å…ƒç´ ä¸ªæ•°å¤§äºäº†ç¼“å­˜æœ€å¤§å®¹é‡ï¼Œåˆ™åˆ é™¤é“¾è¡¨çš„é¡¶ç«¯å…ƒç´ 
+    @Override
+    public boolean removeEldestEntry(Map.Entry<K, V> eldest){
+        System.out.println(eldest.getKey() + "=" + eldest.getValue());
+        return size()>capacity;
+    }
 }  
