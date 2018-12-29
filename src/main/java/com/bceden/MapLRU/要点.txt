@@ -1,0 +1,13 @@
+1.存在两种顺序：插入顺序（默认）和LRU(最近最少使用)  
+// accessOrder决定是否使用此算法，accessOrder=true使用  
+private final boolean accessOrder; 
+2.继承于HashMap
+LinkedHashMap使用一个双向循环链表。
+3.初始化使用了模版方法
+//模板方法模式，HashMap构造函数里面的会调用init()方法  
+//初始化的时候map里没有任何Entry，让header.before = header.after = header  
+void init() {  
+    header = new Entry<K, V>(-1, null, null, null);  
+    header.before = header.after = header;  
+}  
+4.简言之：LinkedHashMap比HashMap多维护了一个链表。

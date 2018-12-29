@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+		<name>Java Boy</name>
+		<course>JSP</course>
+	</student>
+	<student>
+		<name>Java Girl</name>
+		<course>EJB</course>
+	</student>
+	 <student>  
+        <set-name-property propertyName="name" propertyValue="Java Hobbies" />  
+        <set-course-property propertyName="course" propertyValue="Java Programming" />  
+    </student>  
+</students> 

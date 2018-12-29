@@ -1,0 +1,5 @@
+1.命名不好  （抽象的名应该放到前边）
+2.  _latch.countDown();放的位置不对，应该放到finally上
+3.每个启动处理有没有返回结果和服务名称
+4.  executor.execute(v)和submit的区别
+5.工具类的封装

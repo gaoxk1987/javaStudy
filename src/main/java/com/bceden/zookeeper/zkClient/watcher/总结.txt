@@ -1,0 +1,3 @@
+1.为什么不把枚举的eventType和KeeperState两个单独出来呢？
+2.WatcherEvent是jute自动生成的，是为了传输么？
+3.抽象类WatchRegistration 利用的是模板模式  具体获取watcher由子类去实现

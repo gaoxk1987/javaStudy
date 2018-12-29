@@ -1,0 +1,3 @@
+1.transient修饰类变量不能被实现serializable的接口的类序列化，但是实现Externalizable接口可以被序列化
+2.static修饰的变量不被序列化、它属于类不属于对象，存在与jvm常量池中
+3.实现序列化的两种方式（实现serializable接口或者其子类）

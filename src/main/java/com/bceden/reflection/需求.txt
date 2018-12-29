@@ -1,0 +1,2 @@
+1.给定包名类名全路径 利用反射生成对象
+public static Object createObject(String className);

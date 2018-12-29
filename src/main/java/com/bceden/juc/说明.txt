@@ -1,0 +1,13 @@
+CountDownLatch 是计数器, 线程完成一个就记一个, 就像 报数一样, 只不过是递减的.
+而CyclicBarrier更像一个水闸, 线程执行就想水流, 在水闸处都会堵住, 等到水满(线程到齐)了, 才开始泄流.
+
+
+------------------------------------------------------------------------
+说明：在main中执行testCyclicBarrier方法 
+执行到CyclicBarrier barrier = new CyclicBarrier(2, new Runnable()...)时 
+Runnable的参数是在CyclicBarrier的数目达到2时并且所有被CyclicBarrier.await()进入等待的线程被唤醒前执行。 
+所以继续执行下面的两个线程 
+new Thread(new ComponentThread(barrier, array, 0)).start(); 
+new Thread(new ComponentThread(barrier, array, 1)).start(); 
+执行public void run()方法，分别执行，互不影响 
+执行到barrier.await();时该线程进入等待状态，当两个线程都执行完barrier.await();时，进入到new CyclicBarrier(2, new Runnable()...)里面的方法， 执行完里面的方法后，等待的两个线程再次被唤醒，继续各自执行线程后面的语句。 

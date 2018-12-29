@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemlist>
+	 	<item  url="http://s.hc360.com/match" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/getmmtlast.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://z.hc360.com/getmmtlast.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://www.search.hc360.com/cgi-bin/bc" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://log.b2b.hc360.com/logmanage/sitecounter/get_mysite_counter.jsp" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://immana.b2b.hc360.com/IMManager/onlineservice.jsp" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://www.search.hc360.com/cgi-bin/iframe_relaword.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>	 	
+	 	<item  url="http://www.search.hc360.com/match" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://www.search.hc360.com/cgi-bin/companycount" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	
+	 	
+
+	 	<item  url="http://s.hc360.com/match" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/cgi-bin/bc" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/cgi-bin/iframe_relaword.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/cgi-bin/portal_relaword.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/match" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/cgi-bin/companycount" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/sell_relaword.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://detail.b2b.hc360.com/detail/turbine/template/common,getcorinfo.html" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="maskword.hc360.com" isread="false" type="socekt" connect_time_out = "1000"  read_time_out = "1500"></item>
+	 	
+	 	
+	 	<item  url="http://detail.b2b.hc360.com/detail/turbine/template/test,testresult.html" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	<item  url="http://s.hc360.com/portal_relaword.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	 	
+	 	
+	 	<item  url="http://detail.b2b.hc360.com/detail/turbine/template/test,testresult.html" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+		<!-- MMT5.0 微建站 -->
+	  <item  url="http://weixin.im.hc360.com/microclient/m/del/account" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/del/keyword" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/get/bind" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/set/add" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/set/send" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/set/resp" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/set/menu" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/get/qr" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/del/menu" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/get/menu" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <item  url="http://weixin.im.hc360.com/microclient/m/get/auto" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item> 
+	  <item  url="http://weixin.im.hc360.com/microclient/m/get/account" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+	  <!-- 搜索热词推荐 -->
+	 <item  url="http://s.hc360.com/gethotkey.cgi" isread="false" type="http" connect_time_out = "5000"  read_time_out = "5000"></item>
+      
+    <!-- Search API z VPortal -->
+    <item url="http://z.hc360.com/cgi-bin/portal_relaword.cgi" isread="false" type="http" connect_time_out="5000" read_time_out="5000"></item>
+    <!-- Search API z VPortal end -->
+    
+    <!-- Search API z Search-->
+    <item url="http://z.hc360.com/cgi-bin/iframe_relaword.cgi" isread="false" type="http" connect_time_out="5000" read_time_out="5000"></item>
+    <!-- Search API z Search end -->
+    <item url="http://flow.org.hc360.com/flowtreasure/flowTreasureFP" isread="false" type="http" connect_time_out="5000" read_time_out="5000"></item>
+
+</itemlist>
