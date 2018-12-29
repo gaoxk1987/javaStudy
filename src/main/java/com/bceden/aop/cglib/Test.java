@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç8:36:13
+ * Createdate: ä¸‹åˆ8:36:13
  * Version: 1.0
  *
  */
@@ -19,24 +19,24 @@ import com.bceden.aop.IHello;
 import com.bceden.aop.jdkAop.DynaProxyHello;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-4 ÏÂÎç8:36:13   
+ * @date 2014-6-4 ä¸‹åˆ8:36:13
  */
 
 public class Test {
-	
-	public static void main(String[] args) {
-		
-				Enhancer enhancer = new Enhancer();
-		        enhancer.setSuperclass(Hello.class);
-		        enhancer.setCallback(new CglibProxy());
-		        Hello proxy = (Hello)enhancer.create();
-		         // ¢Ü ²Ù×÷´úÀíÊµÀı
-		         proxy.sayHello("ÕÅÈı");
-		         proxy.sayGoogBye("ÀîËÄ");
-	}
+
+    public static void main(String[] args) {
+
+        Enhancer enhancer = new Enhancer();
+        enhancer.setSuperclass(Hello.class);
+        enhancer.setCallback(new CglibProxy());
+        Hello proxy = (Hello)enhancer.create();
+        // â‘£ æ“ä½œä»£ç†å®ä¾‹
+        proxy.sayHello("å¼ ä¸‰");
+        proxy.sayGoogBye("æå››");
+    }
 
 }

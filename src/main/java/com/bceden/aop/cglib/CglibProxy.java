@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç3:36:21
+ * Createdate: ä¸‹åˆ3:36:21
  * Version: 1.0
  *
  */
@@ -18,32 +18,32 @@ import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-8-20 ÏÂÎç3:36:21   
+ * @date 2014-8-20 ä¸‹åˆ3:36:21
  */
 
 public class CglibProxy implements MethodInterceptor{
 
-	
-	@Override
-	public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
-		   // TODO Auto-generated method stub
+
+    @Override
+    public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
+        // TODO Auto-generated method stub
         Object result = null;
         try {
-            // Ö´ĞĞÔ­À´µÄ·½·¨Ö®Ç°¼ÇÂ¼ÈÕÖ¾
+            // æ‰§è¡ŒåŸæ¥çš„æ–¹æ³•ä¹‹å‰è®°å½•æ—¥å¿—
             Logger.before();
-            // JVMÍ¨¹ıÕâÌõÓï¾äÖ´ĞĞÔ­À´µÄ·½·¨(·´Éä»úÖÆ)
+            // JVMé€šè¿‡è¿™æ¡è¯­å¥æ‰§è¡ŒåŸæ¥çš„æ–¹æ³•(åå°„æœºåˆ¶)
             result = methodProxy.invokeSuper(o, args);
-            // Ö´ĞĞÔ­À´µÄ·½·¨Ö®ºó¼ÇÂ¼ÈÕÖ¾
+            // æ‰§è¡ŒåŸæ¥çš„æ–¹æ³•ä¹‹åè®°å½•æ—¥å¿—
             Logger.after();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        // ·µ»Ø·½·¨·µ»ØÖµ¸øµ÷ÓÃÕß
+        // è¿”å›æ–¹æ³•è¿”å›å€¼ç»™è°ƒç”¨è€…
         return result;
-	}
+    }
 
 }

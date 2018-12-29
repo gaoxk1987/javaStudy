@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç8:36:13
+ * Createdate: ä¸‹åˆ8:36:13
  * Version: 1.0
  *
  */
@@ -16,36 +16,36 @@ import com.bceden.aop.Hello;
 import com.bceden.aop.IHello;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-4 ÏÂÎç8:36:13   
+ * @date 2014-6-4 ä¸‹åˆ8:36:13
  */
 
 public class Test {
-	
-	public static void main(String[] args) {
-		 // ¢ÙÄ¿±êÒµÎñÀà
-		         IHello target = new Hello();
-		         // ¢Ú ½«Ä¿±êÒµÎñÀàºÍºáÇĞ´úÂë±àÖ¯µ½Ò»Æğ
-		         DynaProxyHello handler = new DynaProxyHello(target);
-		         // ´´½¨´úÀíÀà
-		         IHello proxy = (IHello) Proxy.newProxyInstance(
-		                                            target.getClass().getClassLoader(), //·µ»ØÄ¿±êÀàµÄÀà×°ÔØÆ÷£¬±£³ÖÁ½¸öÀàµÄÀà×°ÔØÆ÷Ò»Ñù
-		                                            target.getClass().getInterfaces(), //·µ»ØÄ¿±êÀàÊµÏÖµÄ½Ó¿Ú£¬±£Ö¤×éºÏ¶ø³ÉµÄ´úÀíÀàÒ²ÊµÏÖÕâĞ©½Ó¿Ú
-		                                            handler//Ö¸ÅÉË­È¥´¦Àí·½·¨µÄ¶ÔÏó
-		                                            );
-		         // ¢Ü ²Ù×÷´úÀíÊµÀı
-		         proxy.sayHello("ÕÅÈı");
-		         proxy.sayGoogBye("ÀîËÄ");
-		         proxy.sayHello("ÕÅÈı");
-		         proxy.sayHello("ÕÅÈı");
-		         proxy.sayHello("ÕÅÈı");
-		         proxy.sayHello("ÕÅÈı");
-		         proxy.sayHello("ÕÅÈı");
-		         proxy.sayHello("ÕÅÈı");
 
-	}
+    public static void main(String[] args) {
+        // â‘ ç›®æ ‡ä¸šåŠ¡ç±»
+        IHello target = new Hello();
+        // â‘¡ å°†ç›®æ ‡ä¸šåŠ¡ç±»å’Œæ¨ªåˆ‡ä»£ç ç¼–ç»‡åˆ°ä¸€èµ·
+        DynaProxyHello handler = new DynaProxyHello(target);
+        // åˆ›å»ºä»£ç†ç±»
+        IHello proxy = (IHello) Proxy.newProxyInstance(
+                target.getClass().getClassLoader(), //è¿”å›ç›®æ ‡ç±»çš„ç±»è£…è½½å™¨ï¼Œä¿æŒä¸¤ä¸ªç±»çš„ç±»è£…è½½å™¨ä¸€æ ·
+                target.getClass().getInterfaces(), //è¿”å›ç›®æ ‡ç±»å®ç°çš„æ¥å£ï¼Œä¿è¯ç»„åˆè€Œæˆçš„ä»£ç†ç±»ä¹Ÿå®ç°è¿™äº›æ¥å£
+                handler//æŒ‡æ´¾è°å»å¤„ç†æ–¹æ³•çš„å¯¹è±¡
+        );
+        // â‘£ æ“ä½œä»£ç†å®ä¾‹
+        proxy.sayHello("å¼ ä¸‰");
+        proxy.sayGoogBye("æå››");
+        proxy.sayHello("å¼ ä¸‰");
+        proxy.sayHello("å¼ ä¸‰");
+        proxy.sayHello("å¼ ä¸‰");
+        proxy.sayHello("å¼ ä¸‰");
+        proxy.sayHello("å¼ ä¸‰");
+        proxy.sayHello("å¼ ä¸‰");
+
+    }
 
 }

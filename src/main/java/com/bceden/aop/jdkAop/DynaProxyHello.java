@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç8:31:49
+ * Createdate: ä¸‹åˆ8:31:49
  * Version: 1.0
  *
  */
@@ -16,38 +16,38 @@ import java.lang.reflect.Method;
 import com.bceden.aop.Logger;
 
 /**
- * 
+ *
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-6-4 ÏÂÎç8:31:49   
+ * @date 2014-6-4 ä¸‹åˆ8:31:49
  */
 
 public class DynaProxyHello implements InvocationHandler {
 
-	 private Object delegate;//±»´úÀíµÄ¶ÔÏó
-	   
-	      public DynaProxyHello(Object delegate) {
-	          this.delegate = delegate;
-	      }
-	      @SuppressWarnings("unused")
-		public Object invoke(Object proxy, Method method, Object[] args)
-	              throws Throwable {
-	          // TODO Auto-generated method stub
-	          Object result = null;
-	          try {
-	              // Ö´ĞĞÔ­À´µÄ·½·¨Ö®Ç°¼ÇÂ¼ÈÕÖ¾
-	              Logger.before();
-	              if(true) return null;
-	              // JVMÍ¨¹ıÕâÌõÓï¾äÖ´ĞĞÔ­À´µÄ·½·¨(·´Éä»úÖÆ)
-	              result = method.invoke(this.delegate, args);
-	              // Ö´ĞĞÔ­À´µÄ·½·¨Ö®ºó¼ÇÂ¼ÈÕÖ¾
-	              Logger.after();
-	          } catch (Exception e) {
-	              e.printStackTrace();
-	          }
-	          // ·µ»Ø·½·¨·µ»ØÖµ¸øµ÷ÓÃÕß
-	          return result;
-	      }
+    private Object delegate;//è¢«ä»£ç†çš„å¯¹è±¡
+
+    public DynaProxyHello(Object delegate) {
+        this.delegate = delegate;
+    }
+    @SuppressWarnings("unused")
+    public Object invoke(Object proxy, Method method, Object[] args)
+            throws Throwable {
+        // TODO Auto-generated method stub
+        Object result = null;
+        try {
+            // æ‰§è¡ŒåŸæ¥çš„æ–¹æ³•ä¹‹å‰è®°å½•æ—¥å¿—
+            Logger.before();
+            if(true) return null;
+            // JVMé€šè¿‡è¿™æ¡è¯­å¥æ‰§è¡ŒåŸæ¥çš„æ–¹æ³•(åå°„æœºåˆ¶)
+            result = method.invoke(this.delegate, args);
+            // æ‰§è¡ŒåŸæ¥çš„æ–¹æ³•ä¹‹åè®°å½•æ—¥å¿—
+            Logger.after();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        // è¿”å›æ–¹æ³•è¿”å›å€¼ç»™è°ƒç”¨è€…
+        return result;
+    }
 
 }
