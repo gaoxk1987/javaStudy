@@ -3,7 +3,7 @@
  * Copyright(c) 2000-2013 HC360.COM, All Rights Reserved.
  * Project: javaStudy 
  * Author: Gao xingkun
- * Createdate: ÏÂÎç2:39:24
+ * Createdate: ï¿½ï¿½ï¿½ï¿½2:39:24
  * Version: 1.0
  *
  */
@@ -11,11 +11,11 @@
 package com.bceden.pattern.Observer;
 
 /**
- * Observer½Ó¿Ú
+ * Observerï¿½Ó¿ï¿½
  * @project javaStudy
  * @author Gao xingkun
  * @version 1.0
- * @date 2014-8-26 ÏÂÎç2:39:24   
+ * @date 2014-8-26 ï¿½ï¿½ï¿½ï¿½2:39:24   
  */
 
 public interface Observer {
