@@ -17,7 +17,8 @@ public class TestRedis {
     public void setup() {
         //连接redis服务器，192.168.0.100:6379
 //        jedis = new Jedis("121.42.43.122", 6379);
-        jedis = new Jedis("192.168.34.86", 6379);
+//        jedis = new Jedis("192.168.34.86", 6379);
+        jedis = new Jedis("192.168.1.100", 6379);
         //权限认证
 //        jedis.auth("521125");  
     }
